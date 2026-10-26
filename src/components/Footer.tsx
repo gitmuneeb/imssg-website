@@ -31,8 +31,12 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab, openPortal }) => 
           {/* Col 1: Brand & Legacy (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-blue-950 p-1 border-2 border-amber-400">
-                <GraduationCap className="w-6 h-6 text-blue-950" />
+              <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center p-0.5 border-2 border-emerald-600 shrink-0 overflow-hidden shadow">
+                <img 
+                  src="/images/logo.jpg" 
+                  alt="Islamia Model Secondary School Logo" 
+                  className="w-full h-full object-contain rounded-full"
+                />
               </div>
               <div>
                 <h3 className="font-extrabold text-white text-base leading-tight">

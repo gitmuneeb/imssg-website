@@ -26,7 +26,7 @@ export const Hero: React.FC<HeroProps> = ({ setCurrentTab, openNoticeModal }) =>
 
   const slides = [
     {
-      image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1800&q=85",
+      image: "/images/gallery/imss-4.jpg",
       badge: "Legacy of Excellence Since 1982 • Garoora Campus",
       title: "Nurturing Intellectual Brilliance & Moral Character",
       subtitle: "Over four decades of dedicated service providing premier English-medium education grounded in divine values, ethics, and academic rigor in Bandipora.",
@@ -34,7 +34,7 @@ export const Hero: React.FC<HeroProps> = ({ setCurrentTab, openNoticeModal }) =>
       secondaryBtn: { text: "Explore Campus Facilities", tab: "facilities" as TabType }
     },
     {
-      image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1800&q=85",
+      image: "/images/gallery/imss-7.jpg",
       badge: "Practical Laboratories & Digital Smart Classes",
       title: "State-of-the-Art Science & Computing Infrastructure",
       subtitle: "Hands-on scientific inquiry, robotics experiments, and 1:1 computer workstations preparing students for competitive national benchmarks.",
@@ -42,7 +42,7 @@ export const Hero: React.FC<HeroProps> = ({ setCurrentTab, openNoticeModal }) =>
       secondaryBtn: { text: "Fee Calculator", tab: "calculator" as TabType }
     },
     {
-      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1800&q=85",
+      image: "/images/gallery/imss-9.jpg",
       badge: "100% JKBOSE Class 10th Board Pass Record",
       title: "Consistent Academic Distinctions & District Toppers",
       subtitle: "Disciplined academic coaching, personalized faculty mentorship, and regular test series yielding top regional board ranks every session.",

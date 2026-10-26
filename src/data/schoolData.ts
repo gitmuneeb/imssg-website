@@ -11,7 +11,8 @@ export const SCHOOL_INFO = {
   medium: "English Medium",
   type: "Co-Educational Day School (Primary to Secondary)",
   tagline: "Excellence in Academics • Grounded in Moral Values",
-  motto: "Knowledge, Character, Progress",
+  motto: "مِنَ الظُّلُمَاتِ إِلَى النُّورِ (From Darkness into Light)",
+  logo: "/images/logo.jpg",
   address: {
     street: "Bandipora-Srinagar National Highway",
     locality: "Garoora",
@@ -207,66 +208,98 @@ export const RESULTS_DATA: StudentResult[] = [
 export const GALLERY_DATA: GalleryPhoto[] = [
   {
     id: "gal-1",
-    title: "Main Administrative & Academic Building",
+    title: "School Morning Assembly & Moral Discipline",
     category: "Campus",
-    imageUrl: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80",
-    caption: "The peaceful campus of SMS Islamia Model Secondary School overlooking the scenic mountain foothills in Garoora.",
+    imageUrl: "/images/gallery/imss-4.jpg",
+    caption: "Daily morning assembly at Garoora campus featuring spiritual recitations, moral pledge, and student reflections.",
     date: "2026"
   },
   {
     id: "gal-2",
-    title: "Senior Science & Chemistry Laboratory",
+    title: "Classroom Learning & Interactive Pedagogy",
     category: "Academics",
-    imageUrl: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=80",
-    caption: "Students performing titration and practical experiments in our well-equipped laboratory under teacher guidance.",
+    imageUrl: "/images/gallery/imss-2.jpg",
+    caption: "Students engaged in interactive conceptual learning with dedicated subject teachers.",
     date: "2026"
   },
   {
     id: "gal-3",
-    title: "Annual Sports Tournament & Cricket Championship",
+    title: "Annual Sports Meet & Athletic Competitions",
     category: "Sports",
-    imageUrl: "https://images.unsplash.com/photo-1531415074868-036b107e775a?auto=format&fit=crop&w=1200&q=80",
-    caption: "Inter-house cricket and athletic meet where student teams compete with tremendous enthusiasm and sportsmanship.",
+    imageUrl: "/images/gallery/imss-3.jpg",
+    caption: "Inter-house athletic events promoting physical fitness, resilience, and sportsmanship among students.",
     date: "2026"
   },
   {
     id: "gal-4",
-    title: "Computer Education & ICT Lab",
-    category: "Academics",
-    imageUrl: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80",
-    caption: "Digital literacy classes where students learn coding, internet safety, and multimedia productivity.",
+    title: "Seerat-un-Nabi & Naat Khawani Conference",
+    category: "Cultural",
+    imageUrl: "/images/gallery/imss-5.jpg",
+    caption: "Spiritual gatherings and Seerat conferences celebrating Islamic values and moral ethics.",
     date: "2026"
   },
   {
     id: "gal-5",
-    title: "Central Reading Room & Library",
-    category: "Campus",
-    imageUrl: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80",
-    caption: "Over 4,500 titles including encyclopedia, academic reference books, Urdu literature, and Islamic history.",
+    title: "Science Experiments & Working Project Models",
+    category: "Academics",
+    imageUrl: "/images/gallery/imss-7.jpg",
+    caption: "Hands-on student demonstrations and science exhibition projects in biology, physics, and chemistry.",
     date: "2026"
   },
   {
     id: "gal-6",
-    title: "Seerat-un-Nabi & Naat Khawani Gathering",
-    category: "Cultural",
-    imageUrl: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=80",
-    caption: "Heartfelt renditions of Naat Sharif and spiritual speeches delivered by talented students at the auditorium.",
+    title: "Student Activities & Kindergarten Play-Way Learning",
+    category: "Academics",
+    imageUrl: "/images/gallery/imss-8.jpg",
+    caption: "Joyful foundational learning activities nurturing young minds in a caring, supportive atmosphere.",
     date: "2026"
   },
   {
     id: "gal-7",
-    title: "Kindergarten Activity & Play Station",
-    category: "Academics",
-    imageUrl: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=80",
-    caption: "Montessori-inspired active learning environment for early foundational development.",
+    title: "Prize Distribution & Student Felicitations",
+    category: "Events",
+    imageUrl: "/images/gallery/imss-9.jpg",
+    caption: "Honoring academic high-performers, competition winners, and board distinction holders.",
     date: "2026"
   },
   {
     id: "gal-8",
-    title: "Annual Day & Academic Felicitation Ceremony",
+    title: "Campus Events & Community Celebrations",
     category: "Events",
-    imageUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
-    caption: "Medal and trophy distribution honoring Class 10th JKBOSE distinction holders and proud parents.",
+    imageUrl: "/images/gallery/imss-10.jpg",
+    caption: "Co-curricular presentations, cultural programs, and community milestones at IMS Garoora.",
+    date: "2026"
+  },
+  {
+    id: "gal-9",
+    title: "Outdoor Games & Team Sports",
+    category: "Sports",
+    imageUrl: "/images/gallery/imss-11.jpg",
+    caption: "Students participating in outdoor recreational games fostering teamwork and leadership.",
+    date: "2026"
+  },
+  {
+    id: "gal-10",
+    title: "Moral Education & Islamic Studies Circle",
+    category: "Cultural",
+    imageUrl: "/images/gallery/imss-12.jpg",
+    caption: "Values-based guidance focusing on Adab, social responsibility, and community care.",
+    date: "2026"
+  },
+  {
+    id: "gal-11",
+    title: "Art, Creativity & Student Craft Exhibition",
+    category: "Cultural",
+    imageUrl: "/images/gallery/imss-13.jpg",
+    caption: "Display of student artwork, calligraphy, and creative crafts nurtured by our faculty.",
+    date: "2026"
+  },
+  {
+    id: "gal-12",
+    title: "Academic Recognition & Star Performers",
+    category: "Events",
+    imageUrl: "/images/gallery/imss-14.jpg",
+    caption: "Celebrating distinguished student achievements with certificates, medals, and trophies.",
     date: "2026"
   }
 ];

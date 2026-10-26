@@ -113,13 +113,13 @@ export const Header: React.FC<HeaderProps> = ({ currentTab, setCurrentTab, openP
           onClick={() => handleNav('home')} 
           className="flex items-center gap-3.5 cursor-pointer group select-none"
         >
-          {/* Institutional Crest */}
-          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-[#0c2340] via-slate-900 to-[#1e3a5f] p-0.5 shadow-md flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-            <div className="w-full h-full bg-white rounded-[14px] flex flex-col items-center justify-center text-[#0c2340] border border-amber-400/40 p-1 text-center">
-              <GraduationCap className="w-6 h-6 text-[#0c2340] group-hover:text-amber-600 transition-colors" />
-              <span className="text-[9px] font-black tracking-tight text-[#0c2340] leading-none mt-0.5">IMSS</span>
-              <span className="text-[7px] text-amber-600 font-bold leading-none">1982</span>
-            </div>
+          {/* Official School Crest */}
+          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white p-0.5 shadow-md border-2 border-emerald-700/80 shrink-0 group-hover:scale-105 transition-transform overflow-hidden flex items-center justify-center">
+            <img 
+              src="/images/logo.jpg" 
+              alt="Islamia Model Secondary School Garoora Logo" 
+              className="w-full h-full object-contain rounded-full"
+            />
           </div>
 
           {/* School Name & Sub-details */}

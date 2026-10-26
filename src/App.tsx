@@ -122,8 +122,8 @@ export function App() {
                   <div className="lg:col-span-5 relative">
                     <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                       <img 
-                        src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1000&q=80" 
-                        alt="School Campus" 
+                        src="/images/gallery/imss-4.jpg" 
+                        alt="Islamia Model Secondary School Garoora Campus" 
                         className="w-full h-88 object-cover"
                       />
                     </div>
