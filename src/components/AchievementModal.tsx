@@ -293,12 +293,12 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
 
             {/* School Header: Logo, Official Title, Location & Registration */}
             <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 text-center">
-              {/* Official Sunburst School Crest */}
-              <div className="relative w-16 h-16 sm:w-20 sm:h-20 shrink-0 flex items-center justify-center drop-shadow-[0_4px_12px_rgba(245,158,11,0.6)]">
+              {/* Official School Logo */}
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white p-1 border-2 border-amber-400 shrink-0 shadow-lg overflow-hidden flex items-center justify-center">
                 <img
-                  src="/images/achievers/school_sunburst.png"
-                  alt="SMS Islamia Model Secondary School Garoora Crest"
-                  className="w-full h-full object-contain"
+                  src="/images/logo.jpg"
+                  alt="SMS Islamia Model Secondary School Garoora Logo"
+                  className="w-full h-full object-contain rounded-full"
                 />
               </div>
 
