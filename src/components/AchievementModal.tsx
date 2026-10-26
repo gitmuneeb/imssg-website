@@ -6,7 +6,6 @@ import {
   Trophy, 
   Award, 
   Medal, 
-  Star, 
   Sparkles, 
   GraduationCap
 } from 'lucide-react';
@@ -24,7 +23,7 @@ interface Achiever {
   badge: string;
   scoreOrAward: string;
   achievement: string;
-  image: string;
+  gender: 'boy' | 'girl';
 }
 
 interface SlideData {
@@ -38,6 +37,53 @@ interface SlideData {
   targetTab: TabType;
   actionText: string;
 }
+
+// Boy Student Avatar Icon (Indicates No Image Available)
+const BoyAvatar: React.FC = () => (
+  <div className="relative w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-slate-900 via-[#132238] to-[#0c1829] p-1.5 select-none overflow-hidden">
+    {/* Boy Silhouette with Uniform */}
+    <svg viewBox="0 0 80 90" fill="none" className="w-16 h-18 sm:w-18 sm:h-20 drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+      {/* Boy Hair & Head */}
+      <path d="M26 30C26 18 33 10 40 10C47 10 54 18 54 30C54 38 48 45 40 45C32 45 26 38 26 30Z" fill="#fcd34d" fillOpacity="0.9" />
+      <path d="M25 25C26 16 33 9 40 9C47 9 54 16 55 25C51 21 44 20 40 21C35 20 28 21 25 25Z" fill="#b45309" />
+      {/* Neck */}
+      <rect x="36" y="44" width="8" height="9" fill="#fde68a" />
+      {/* School Uniform Shoulders */}
+      <path d="M12 85C12 66 22 53 40 53C58 53 68 66 68 85H12Z" fill="#1e3a8a" stroke="#fbbf24" strokeWidth="1.5" />
+      {/* Shirt Collar & Tie */}
+      <polygon points="34,53 40,65 46,53" fill="#ffffff" />
+      <polygon points="40,58 37,76 40,84 43,76" fill="#dc2626" />
+    </svg>
+    {/* "No Image" Label Pill */}
+    <span className="absolute bottom-1 bg-black/85 text-amber-300 text-[8px] sm:text-[8.5px] font-black px-1.5 py-0.5 rounded border border-amber-400/50 tracking-wider uppercase shadow-sm">
+      No Image
+    </span>
+  </div>
+);
+
+// Girl Student Avatar Icon (Indicates No Image Available)
+const GirlAvatar: React.FC = () => (
+  <div className="relative w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-slate-900 via-[#2d1124] to-[#1a0815] p-1.5 select-none overflow-hidden">
+    {/* Girl Silhouette with School Scarf / Hijab */}
+    <svg viewBox="0 0 80 90" fill="none" className="w-16 h-18 sm:w-18 sm:h-20 drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+      {/* Head Scarf Draping */}
+      <path d="M22 36C22 18 30 8 40 8C50 8 58 18 58 36C58 48 54 58 40 58C26 58 22 48 22 36Z" fill="#047857" stroke="#fbbf24" strokeWidth="1.5" />
+      {/* Inner Face Oval */}
+      <ellipse cx="40" cy="33" rx="11" ry="14" fill="#fde68a" />
+      {/* Scarf chin wrap */}
+      <path d="M28 38C32 44 48 44 52 38C52 46 47 52 40 52C33 52 28 46 28 38Z" fill="#065f46" />
+      {/* School Uniform Shoulders with Draped Scarf */}
+      <path d="M12 85C12 65 24 55 40 55C56 55 68 65 68 85H12Z" fill="#064e3b" stroke="#fbbf24" strokeWidth="1.5" />
+      {/* Brooch & Scarf fold */}
+      <circle cx="40" cy="57" r="2.5" fill="#f59e0b" />
+      <polygon points="38,59 40,75 42,59" fill="#10b981" />
+    </svg>
+    {/* "No Image" Label Pill */}
+    <span className="absolute bottom-1 bg-black/85 text-amber-300 text-[8px] sm:text-[8.5px] font-black px-1.5 py-0.5 rounded border border-amber-400/50 tracking-wider uppercase shadow-sm">
+      No Image
+    </span>
+  </div>
+);
 
 export const AchievementModal: React.FC<AchievementModalProps> = ({
   isOpen,
@@ -59,35 +105,35 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
           badge: 'DISTRICT 1ST RANK 🥇',
           scoreOrAward: '492 / 500 (98.4%)',
           achievement: 'Bandipora District Topper • Mathematics 100/100',
-          image: '/images/achievers/imss_students/imss_student_1.jpg'
+          gender: 'boy'
         },
         {
           name: 'SYED BAREENA FATIMA',
           badge: 'DISTRICT 2ND RANK ⭐',
           scoreOrAward: '488 / 500 (97.6%)',
           achievement: 'Girls Wing Topper • Science 100 • Urdu 99',
-          image: '/images/achievers/imss_students/imss_student_2.jpg'
+          gender: 'girl'
         },
         {
           name: 'FAIZAN AHMAD BHAT',
           badge: 'SCHOOL 3RD RANK 🏆',
           scoreOrAward: '481 / 500 (96.2%)',
           achievement: 'Star Distinction • All Subjects A1 Grade',
-          image: '/images/achievers/imss_students/imss_student_3.jpg'
+          gender: 'boy'
         },
         {
           name: 'MEHVISH JAN',
           badge: 'STAR DISTINCTION 🌟',
           scoreOrAward: '476 / 500 (95.2%)',
           achievement: 'Social Science 98/100 • Urdu Subject Topper',
-          image: '/images/achievers/imss_students/imss_student_4.jpg'
+          gender: 'girl'
         },
         {
           name: 'OWAIS AHMAD DAR',
           badge: 'STAR DISTINCTION 🎖️',
           scoreOrAward: '472 / 500 (94.4%)',
           achievement: 'Mathematics 97/100 • Star First Division',
-          image: '/images/achievers/imss_students/imss_student_5.jpg'
+          gender: 'boy'
         }
       ],
       summaryTally: 'Total Appeared : 58  |  Distinctions : 48  |  1st Division : 10  |  Pass Rate : 100%',
@@ -106,35 +152,35 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
           badge: 'NEET QUALIFIER 🩺',
           scoreOrAward: '489 / 500 (97.8%)',
           achievement: 'Medical Stream Topper • Biology 99/100',
-          image: '/images/achievers/imss_students/imss_student_12.jpg'
+          gender: 'boy'
         },
         {
           name: 'AREEBA MANZOOR',
           badge: 'JEE SELECTED 📐',
           scoreOrAward: '482 / 500 (96.4%)',
           achievement: 'Non-Medical Stream Topper • Math 99/100',
-          image: '/images/achievers/imss_students/imss_student_13.jpg'
+          gender: 'girl'
         },
         {
           name: 'MUNEEB-UL-ISLAM',
           badge: 'STREAM TOPPER 📚',
           scoreOrAward: '475 / 500 (95.0%)',
           achievement: 'Humanities Stream Topper • Pol. Science 99',
-          image: '/images/achievers/imss_students/imss_student_14.jpg'
+          gender: 'boy'
         },
         {
           name: 'SAIMA RASHID',
           badge: 'COMMERCE TOPPER 📈',
           scoreOrAward: '471 / 500 (94.2%)',
           achievement: 'Accountancy 100/100 • Economics 96/100',
-          image: '/images/achievers/imss_students/imss_student_15.jpg'
+          gender: 'girl'
         },
         {
           name: 'DANISH FAROOQ',
           badge: 'STAR DISTINCTION 🔬',
           scoreOrAward: '468 / 500 (93.6%)',
           achievement: 'Physics Distinction 98/100 • Science Merit',
-          image: '/images/achievers/imss_students/imss_student_16.jpg'
+          gender: 'boy'
         }
       ],
       summaryTally: 'Medical / NEET : 14  |  Engineering / JEE : 12  |  Distinctions : 92%  |  Placements : 100%',
@@ -153,35 +199,35 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
           badge: '1ST POSITION GOLD 🥇',
           scoreOrAward: 'CHAMPIONS CUP',
           achievement: 'Kashmir Valley Inter-School Husn-e-Qirat Championship',
-          image: '/images/achievers/imss_students/imss_student_23.jpg'
+          gender: 'boy'
         },
         {
           name: 'ZAIRA SHAFI & TEAM',
           badge: 'BEST SPEAKER & GOLD 🏆',
           scoreOrAward: 'DISTRICT TROPHY',
           achievement: 'Bandipora District Youth Parliamentary Debate',
-          image: '/images/achievers/imss_students/imss_student_24.jpg'
+          gender: 'girl'
         },
         {
           name: 'SENIOR ATHLETICS RELAY',
           badge: '1ST POSITION GOLD 🏃',
           scoreOrAward: 'GOLD MEDAL & CUP',
           achievement: 'District Bandipora Inter-School 4x100m Track Meet',
-          image: '/images/achievers/imss_students/imss_student_25.jpg'
+          gender: 'boy'
         },
         {
           name: 'HAMZA MALIK',
           badge: 'STATE INNOVATION AWARD 🔬',
           scoreOrAward: '1ST PRIZE & CUP',
           achievement: 'J&K UT Science & Robotics Innovation Expo 2026',
-          image: '/images/achievers/imss_students/imss_student_26.jpg'
+          gender: 'boy'
         },
         {
           name: 'NOOR-UL-HUDA',
           badge: 'GOLD MEDALIST 🌟',
           scoreOrAward: '1ST PRIZE',
           achievement: 'Kashmir Valley Inter-School Naat Khuwani Championship',
-          image: '/images/achievers/imss_students/imss_student_27.jpg'
+          gender: 'girl'
         }
       ],
       summaryTally: 'Gold Medals : 28  |  District Championship Cups : 16  |  Valley Trophies : 6  |  State Finalists : 8',
@@ -276,7 +322,7 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
           }}
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Top Ceremonial Scalloped Maroon Curtain Valance with Golden Fringe */}
+          {/* Top Ceremonial Maroon Curtain Valance with Golden Fringe */}
           <div className="relative w-full overflow-hidden bg-gradient-to-b from-[#3a0107] to-[#590612] border-b-2 border-amber-400/60 pb-3 sm:pb-4 pt-4 sm:pt-5 px-4 sm:px-6">
             {/* Velvet Drapery Texture / Pleats */}
             <div 
@@ -291,9 +337,9 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
               className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 shadow-[0_0_12px_rgba(251,191,36,0.8)]"
             />
 
-            {/* School Header: Logo, Official Title, Location & Registration */}
+            {/* School Header: Clean Official Logo + School Title + Location */}
             <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 text-center">
-              {/* Official School Logo */}
+              {/* Clean Official School Logo (No sunburst border) */}
               <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white p-1 border-2 border-amber-400 shrink-0 shadow-lg overflow-hidden flex items-center justify-center">
                 <img
                   src="/images/logo.jpg"
@@ -354,7 +400,7 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
             </div>
           </div>
 
-          {/* Student Showcase: EXACTLY 5 STUDENTS PER EVENT */}
+          {/* Student Showcase: EXACTLY 5 STUDENTS WITH BOY / GIRL "NO IMAGE" AVATARS */}
           <div className="px-3 sm:px-6 py-4 sm:py-5">
             <div className="grid grid-cols-1 sm:grid-cols-5 gap-3 sm:gap-4 max-w-5xl mx-auto">
               {current.achievers.map((achiever, idx) => (
@@ -367,14 +413,14 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
                     {achiever.badge}
                   </div>
 
-                  {/* Student Photo in Golden Frame */}
+                  {/* Boy / Girl Avatar Frame Indicating No Photo */}
                   <div className="bg-gradient-to-b from-amber-300 via-amber-400 to-yellow-500 p-1 rounded-xl shadow-xl w-24 sm:w-28 aspect-[3/4]">
-                    <div className="w-full h-full bg-slate-900 rounded-lg overflow-hidden border border-white/60">
-                      <img
-                        src={achiever.image}
-                        alt={achiever.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
+                    <div className="w-full h-full rounded-lg overflow-hidden border border-white/60">
+                      {achiever.gender === 'boy' ? (
+                        <BoyAvatar />
+                      ) : (
+                        <GirlAvatar />
+                      )}
                     </div>
                   </div>
 
