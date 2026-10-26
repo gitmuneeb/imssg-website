@@ -275,19 +275,19 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-2 sm:p-4 md:p-6 bg-slate-950/85 backdrop-blur-sm select-none animate-fade-in no-print overflow-y-auto"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-5 md:p-6 bg-slate-950/50 sm:bg-slate-950/65 lg:bg-slate-950/80 backdrop-blur-[2px] select-none animate-fade-in no-print overflow-y-auto"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
       role="dialog"
       aria-modal="true"
     >
-      {/* Outer Card Wrapper */}
+      {/* Outer Card Wrapper with visible margins so website shows behind */}
       <div className="relative w-full max-w-5xl my-auto">
         {/* Prominent Circular Close Button ("X") at Top-Right */}
         <button
           onClick={onClose}
-          className="absolute -top-3.5 -right-2 sm:-top-4 sm:-right-4 z-50 w-10 h-10 sm:w-12 sm:h-12 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-full flex items-center justify-center shadow-2xl border-2 border-white cursor-pointer transition-transform hover:scale-110 active:scale-95"
+          className="absolute -top-3 -right-1.5 sm:-top-4 sm:-right-4 z-50 w-9 h-9 sm:w-11 sm:h-11 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-full flex items-center justify-center shadow-2xl border-2 border-white cursor-pointer transition-transform hover:scale-110 active:scale-95"
           aria-label="Close Announcement"
           title="Close (Esc)"
         >
@@ -297,33 +297,33 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
         {/* Left Arrow Navigation */}
         <button
           onClick={prevSlide}
-          className="absolute -left-2 sm:-left-5 top-1/2 -translate-y-1/2 z-40 p-2 sm:p-3 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-full shadow-xl border-2 border-white cursor-pointer transition-transform hover:scale-110 active:scale-95 group"
+          className="absolute -left-2 sm:-left-5 top-1/2 -translate-y-1/2 z-40 p-1.5 sm:p-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-full shadow-xl border-2 border-white cursor-pointer transition-transform hover:scale-110 active:scale-95 group"
           aria-label="Previous Event"
           title="Previous Event (Left Arrow)"
         >
-          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 stroke-[3]" />
+          <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6 stroke-[3]" />
         </button>
 
         {/* Right Arrow Navigation */}
         <button
           onClick={nextSlide}
-          className="absolute -right-2 sm:-right-5 top-1/2 -translate-y-1/2 z-40 p-2 sm:p-3 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-full shadow-xl border-2 border-white cursor-pointer transition-transform hover:scale-110 active:scale-95 group"
+          className="absolute -right-2 sm:-right-5 top-1/2 -translate-y-1/2 z-40 p-1.5 sm:p-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-full shadow-xl border-2 border-white cursor-pointer transition-transform hover:scale-110 active:scale-95 group"
           aria-label="Next Event"
           title="Next Event (Right Arrow)"
         >
-          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 stroke-[3]" />
+          <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6 stroke-[3]" />
         </button>
 
-        {/* MAIN STAGE CARD WITH CEREMONIAL MAROON VELVET CURTAINS & GOLDEN AWARDS */}
+        {/* MAIN STAGE CARD WITH CEREMONIAL MAROON VELVET CURTAINS & SLIGHT TRANSPARENCY ON MOBILE */}
         <div
-          className="relative rounded-2xl sm:rounded-3xl border-4 border-amber-400/90 shadow-[0_20px_60px_rgba(0,0,0,0.8)] overflow-hidden text-white"
+          className="relative rounded-2xl sm:rounded-3xl border-2 sm:border-4 border-amber-400/90 shadow-[0_20px_60px_rgba(0,0,0,0.8)] overflow-hidden text-white backdrop-blur-md"
           style={{
-            background: 'radial-gradient(ellipse at top, #7b0d1e 0%, #4a030d 50%, #2b0106 100%)'
+            background: 'radial-gradient(ellipse at top, rgba(123, 13, 30, 0.94) 0%, rgba(74, 3, 13, 0.94) 50%, rgba(43, 1, 6, 0.96) 100%)'
           }}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Top Ceremonial Maroon Curtain Valance with Golden Fringe */}
-          <div className="relative w-full overflow-hidden bg-gradient-to-b from-[#3a0107] to-[#590612] border-b-2 border-amber-400/60 pb-3 sm:pb-4 pt-4 sm:pt-5 px-4 sm:px-6">
+          <div className="relative w-full overflow-hidden bg-gradient-to-b from-[#3a0107]/90 to-[#590612]/90 border-b-2 border-amber-400/60 pb-2.5 sm:pb-4 pt-3 sm:pt-5 px-3 sm:px-6">
             {/* Velvet Drapery Texture / Pleats */}
             <div 
               className="absolute inset-0 opacity-20 pointer-events-none"
@@ -338,9 +338,9 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
             />
 
             {/* School Header: Clean Official Logo + School Title + Location */}
-            <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 text-center">
+            <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-5 text-center">
               {/* Clean Official School Logo (No sunburst border) */}
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white p-1 border-2 border-amber-400 shrink-0 shadow-lg overflow-hidden flex items-center justify-center">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white p-1 border-2 border-amber-400 shrink-0 shadow-lg overflow-hidden flex items-center justify-center">
                 <img
                   src="/images/logo.jpg"
                   alt="SMS Islamia Model Secondary School Garoora Logo"
@@ -350,37 +350,38 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
 
               {/* Institution Title */}
               <div className="space-y-0.5">
-                <div className="inline-flex items-center gap-1.5 bg-amber-400/20 border border-amber-400/40 px-3 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest text-amber-300 mb-0.5">
+                <div className="inline-flex items-center gap-1.5 bg-amber-400/20 border border-amber-400/40 px-2.5 sm:px-3 py-0.5 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-amber-300 mb-0.5">
                   <Sparkles className="w-3 h-3 text-amber-300" />
                   <span>Celebrating Educational Excellence Since 1980</span>
                   <Sparkles className="w-3 h-3 text-amber-300" />
                 </div>
 
                 <h1
-                  className="text-base sm:text-xl md:text-2xl font-black text-amber-300 tracking-wider uppercase font-serif drop-shadow-md leading-tight"
+                  className="text-sm sm:text-xl md:text-2xl font-black text-amber-300 tracking-wider uppercase font-serif drop-shadow-md leading-tight"
                   style={{ fontFamily: 'Georgia, Cambria, "Times New Roman", Times, serif' }}
                 >
                   S.M.S. ISLAMIA MODEL SECONDARY SCHOOL
                 </h1>
 
-                <p className="text-[11px] sm:text-xs text-amber-100 font-semibold tracking-wide">
+                <p className="text-[10px] sm:text-xs text-amber-100 font-semibold tracking-wide">
                   Garoora, Bandipora, Jammu & Kashmir • Affiliated to JKBOSE • UDISE Code: {SCHOOL_INFO.udiseCode}
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Ceremonial Congratulations Message & CLEAR EVENT NAME BANNER */}
-          <div className="text-center px-4 sm:px-8 pt-3 sm:pt-4 pb-1">
-            {/* Elegant Golden Divider */}
-            <div className="flex items-center justify-center gap-2 my-1">
+          {/* CLEAR EVENT NAME BANNER (Congratulations paragraph removed on mobile/tabs to adjust space) */}
+          <div className="text-center px-3 sm:px-8 pt-2 sm:pt-3 pb-1">
+            {/* Elegant Golden Divider (Desktop only) */}
+            <div className="hidden lg:flex items-center justify-center gap-2 my-1">
               <span className="h-[1px] w-12 sm:w-24 bg-gradient-to-r from-transparent to-amber-400 inline-block"></span>
               <Award className="w-4 h-4 text-amber-400 animate-pulse" />
               <span className="h-[1px] w-12 sm:w-24 bg-gradient-to-l from-transparent to-amber-400 inline-block"></span>
             </div>
 
+            {/* Full Congratulations paragraph (Hidden on mobile & tabs to adjust space) */}
             <div
-              className="font-serif font-black text-amber-200 text-[10px] sm:text-[11.5px] md:text-xs leading-relaxed max-w-3xl mx-auto tracking-wide uppercase"
+              className="hidden lg:block font-serif font-black text-amber-200 text-xs leading-relaxed max-w-3xl mx-auto tracking-wide uppercase"
               style={{ fontFamily: 'Georgia, Cambria, "Times New Roman", Times, serif' }}
             >
               <p className="text-amber-300 font-extrabold">{current.congratsTop}</p>
@@ -388,25 +389,25 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
             </div>
 
             {/* HIGHLY VISIBLE EVENT NAME BANNER WITH GOLDEN AWARDS */}
-            <div className="inline-flex items-center justify-center gap-2 sm:gap-3 mt-3 px-5 sm:px-8 py-2 bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 text-slate-950 rounded-2xl shadow-xl border-2 border-white">
-              <AwardIcon className="w-5 h-5 text-slate-950 shrink-0" />
+            <div className="inline-flex items-center justify-center gap-2 sm:gap-3 mt-1 sm:mt-2 lg:mt-3 px-3.5 sm:px-8 py-1.5 sm:py-2 bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 text-slate-950 rounded-xl sm:rounded-2xl shadow-xl border sm:border-2 border-white">
+              <AwardIcon className="w-4 h-4 sm:w-5 sm:h-5 text-slate-950 shrink-0" />
               <h2
-                className="text-xs sm:text-base md:text-lg font-black tracking-wider uppercase font-serif"
+                className="text-[11px] sm:text-sm lg:text-base font-black tracking-wider uppercase font-serif"
                 style={{ fontFamily: 'Georgia, Cambria, "Times New Roman", Times, serif' }}
               >
                 {current.eventName}
               </h2>
-              <AwardIcon className="w-5 h-5 text-slate-950 shrink-0" />
+              <AwardIcon className="w-4 h-4 sm:w-5 sm:h-5 text-slate-950 shrink-0" />
             </div>
           </div>
 
           {/* Student Showcase: EXACTLY 5 STUDENTS TAKING 2 ROWS ON MOBILE & TABLETS (3 in Row 1, 2 Centered in Row 2), 1 ROW ON DESKTOP */}
-          <div className="px-2 sm:px-4 lg:px-6 py-3 sm:py-4 lg:py-5">
-            <div className="grid grid-cols-6 lg:grid-cols-5 gap-2 sm:gap-3 lg:gap-4 max-w-5xl mx-auto">
+          <div className="px-2 sm:px-4 lg:px-6 py-2.5 sm:py-3.5 lg:py-5">
+            <div className="grid grid-cols-6 lg:grid-cols-5 gap-1.5 sm:gap-3 lg:gap-4 max-w-5xl mx-auto">
               {current.achievers.map((achiever, idx) => (
                 <div 
                   key={idx} 
-                  className={`flex flex-col items-center text-center group bg-black/35 hover:bg-black/55 p-2 sm:p-2.5 lg:p-3 rounded-xl sm:rounded-2xl border border-amber-400/40 hover:border-amber-400 shadow-md transition-all duration-300 ${
+                  className={`flex flex-col items-center text-center group bg-black/35 hover:bg-black/55 p-1.5 sm:p-2.5 lg:p-3 rounded-xl sm:rounded-2xl border border-amber-400/40 hover:border-amber-400 shadow-md transition-all duration-300 ${
                     idx < 3
                       ? 'col-span-2 lg:col-span-1'
                       : idx === 3
@@ -415,12 +416,12 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
                   }`}
                 >
                   {/* Clear Golden Achievement Tag at top of card */}
-                  <div className="bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-950 text-[8px] sm:text-[9px] lg:text-[10px] font-black px-1.5 sm:px-2 py-0.5 rounded-full shadow-md border border-white whitespace-nowrap mb-1.5 leading-tight">
+                  <div className="bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-950 text-[7.5px] sm:text-[9px] lg:text-[10px] font-black px-1.5 sm:px-2 py-0.5 rounded-full shadow-md border border-white whitespace-nowrap mb-1 leading-tight">
                     {achiever.badge}
                   </div>
 
                   {/* Boy / Girl Avatar Frame Indicating No Photo */}
-                  <div className="bg-gradient-to-b from-amber-300 via-amber-400 to-yellow-500 p-0.5 sm:p-1 rounded-xl shadow-xl w-16 sm:w-20 md:w-24 lg:w-28 aspect-[3/4]">
+                  <div className="bg-gradient-to-b from-amber-300 via-amber-400 to-yellow-500 p-0.5 sm:p-1 rounded-xl shadow-xl w-14 sm:w-20 md:w-24 lg:w-28 aspect-[3/4]">
                     <div className="w-full h-full rounded-lg overflow-hidden border border-white/60">
                       {achiever.gender === 'boy' ? (
                         <BoyAvatar />
@@ -432,7 +433,7 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
 
                   {/* Student Name */}
                   <span
-                    className="font-serif font-black text-amber-200 text-[10px] sm:text-xs lg:text-sm uppercase tracking-tight mt-1.5 sm:mt-2 leading-tight block line-clamp-2"
+                    className="font-serif font-black text-amber-200 text-[9px] sm:text-xs lg:text-sm uppercase tracking-tight mt-1 sm:mt-2 leading-tight block line-clamp-2"
                     style={{ fontFamily: 'Georgia, Cambria, "Times New Roman", Times, serif' }}
                   >
                     {achiever.name}
@@ -440,14 +441,14 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
 
                   {/* Score / Award Title */}
                   <span
-                    className="font-serif font-black text-amber-400 text-[10.5px] sm:text-xs lg:text-sm leading-snug mt-0.5 sm:mt-1 block"
+                    className="font-serif font-black text-amber-400 text-[9.5px] sm:text-xs lg:text-sm leading-snug mt-0.5 sm:mt-1 block"
                     style={{ fontFamily: 'Georgia, Cambria, "Times New Roman", Times, serif' }}
                   >
                     {achiever.scoreOrAward}
                   </span>
 
-                  {/* Clearly Visible Achievement Description */}
-                  <span className="text-[8.5px] sm:text-[9.5px] lg:text-[11px] text-amber-100 font-semibold leading-tight block mt-1 px-0.5 line-clamp-2">
+                  {/* Subtitle Achievement Description (Hidden on mobile/tabs to adjust space) */}
+                  <span className="hidden lg:block text-[8.5px] sm:text-[9.5px] lg:text-[11px] text-amber-100 font-semibold leading-tight mt-1 px-0.5 line-clamp-2">
                     {achiever.achievement}
                   </span>
                 </div>
@@ -456,12 +457,12 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
           </div>
 
           {/* Footer Bar: Golden Tally & Navigation Controls */}
-          <div className="bg-gradient-to-r from-[#2b0106] via-[#4a030d] to-[#2b0106] p-3 sm:p-4 border-t-2 border-amber-400/60 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="bg-gradient-to-r from-[#2b0106]/95 via-[#4a030d]/95 to-[#2b0106]/95 p-2 sm:p-3 lg:p-4 border-t-2 border-amber-400/60 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3">
             {/* Summary Tally */}
-            <div className="flex items-center gap-2 text-center sm:text-left">
-              <Trophy className="w-5 h-5 text-amber-400 shrink-0" />
+            <div className="flex items-center gap-1.5 sm:gap-2 text-center sm:text-left">
+              <Trophy className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 shrink-0" />
               <p
-                className="font-serif font-bold text-amber-200 text-xs sm:text-sm tracking-wide"
+                className="font-serif font-bold text-amber-200 text-[10px] sm:text-xs lg:text-sm tracking-wide"
                 style={{ fontFamily: 'Georgia, Cambria, "Times New Roman", Times, serif' }}
               >
                 {current.summaryTally}
@@ -469,10 +470,10 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
             </div>
 
             {/* Slide Dots & Action CTA Button */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               {/* Event Slide Indicator & Dots */}
-              <div className="flex items-center gap-2">
-                <span className="text-[11px] text-amber-300 font-semibold hidden sm:inline">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <span className="text-[10px] sm:text-[11px] text-amber-300 font-semibold hidden md:inline">
                   Event {activeSlide + 1} of {slides.length}
                 </span>
                 <div className="flex items-center space-x-1.5">
@@ -481,7 +482,7 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
                       key={idx}
                       onClick={() => setActiveSlide(idx)}
                       className={`h-2 rounded-full transition-all cursor-pointer ${
-                        idx === activeSlide ? 'w-6 bg-amber-400' : 'w-2 bg-amber-400/40 hover:bg-amber-400/70'
+                        idx === activeSlide ? 'w-5 sm:w-6 bg-amber-400' : 'w-2 bg-amber-400/40 hover:bg-amber-400/70'
                       }`}
                       aria-label={`Go to event ${idx + 1}`}
                       title={`Go to event ${idx + 1}`}
@@ -490,17 +491,17 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
                 </div>
               </div>
 
-              {/* Action Button */}
+              {/* Action Button (Hidden on mobile and tablets to adjust space) */}
               <button
                 onClick={() => handleAction(current.targetTab)}
-                className="px-3.5 py-1.5 bg-gradient-to-r from-amber-400 to-yellow-400 hover:from-amber-300 hover:to-yellow-300 text-slate-950 font-black text-xs rounded-xl shadow-md transition-all cursor-pointer flex items-center gap-1.5"
+                className="hidden lg:inline-flex px-3.5 py-1.5 bg-gradient-to-r from-amber-400 to-yellow-400 hover:from-amber-300 hover:to-yellow-300 text-slate-950 font-black text-xs rounded-xl shadow-md transition-all cursor-pointer items-center gap-1.5"
               >
                 <span>{current.actionText}</span>
               </button>
 
               <button
                 onClick={onClose}
-                className="px-3 py-1.5 bg-white/10 hover:bg-white/20 text-amber-200 font-bold text-xs rounded-xl border border-amber-400/40 transition-colors cursor-pointer"
+                className="px-3 sm:px-3.5 py-1 sm:py-1.5 bg-white/10 hover:bg-white/20 text-amber-200 font-bold text-xs rounded-xl border border-amber-400/40 transition-colors cursor-pointer"
               >
                 Close
               </button>
