@@ -26,7 +26,7 @@ export const Hero: React.FC<HeroProps> = ({ setCurrentTab, openNoticeModal }) =>
 
   const slides = [
     {
-      image: "/images/gallery/imss-4.jpg",
+      image: "/images/hero-main.jpg",
       badge: "Legacy of Excellence Since 1982 • Garoora Campus",
       title: "Nurturing Intellectual Brilliance & Moral Character",
       subtitle: "Over four decades of dedicated service providing premier English-medium education grounded in divine values, ethics, and academic rigor in Bandipora.",
@@ -34,20 +34,28 @@ export const Hero: React.FC<HeroProps> = ({ setCurrentTab, openNoticeModal }) =>
       secondaryBtn: { text: "Explore Campus Facilities", tab: "facilities" as TabType }
     },
     {
-      image: "/images/gallery/imss-7.jpg",
-      badge: "Practical Laboratories & Digital Smart Classes",
-      title: "State-of-the-Art Science & Computing Infrastructure",
-      subtitle: "Hands-on scientific inquiry, robotics experiments, and 1:1 computer workstations preparing students for competitive national benchmarks.",
+      image: "/images/hero-slide2.jpg",
+      badge: "Vibrant Campus Life & Holistic Student Mentoring",
+      title: "State-of-the-Art Learning & Co-Curricular Excellence",
+      subtitle: "Hands-on scientific inquiry, sports training, and disciplined moral environment preparing students for tomorrow's regional and national benchmarks.",
       primaryBtn: { text: "View Academic Programs", tab: "academics" as TabType },
-      secondaryBtn: { text: "Fee Calculator", tab: "calculator" as TabType }
+      secondaryBtn: { text: "Fee Calculator (FFRC)", tab: "calculator" as TabType }
     },
     {
-      image: "/images/gallery/imss-9.jpg",
+      image: "/images/hero-slide3.jpg",
       badge: "100% JKBOSE Class 10th Board Pass Record",
       title: "Consistent Academic Distinctions & District Toppers",
       subtitle: "Disciplined academic coaching, personalized faculty mentorship, and regular test series yielding top regional board ranks every session.",
       primaryBtn: { text: "View Board Results", tab: "results" as TabType },
       secondaryBtn: { text: "Download Prospectus", tab: "downloads" as TabType }
+    },
+    {
+      image: "/images/annual-event.jpg",
+      badge: "Annual Honors, Seerat & Youth Leadership",
+      title: "Celebrating Student Achievement & Ethical Values",
+      subtitle: "Honoring academic high-scorers, Quranic recitation winners, and athletic champions with certificates, medals, and community recognition.",
+      primaryBtn: { text: "Explore Photo Gallery", tab: "gallery" as TabType },
+      secondaryBtn: { text: "Notice Board & Circulars", tab: "notices" as TabType }
     }
   ];
 

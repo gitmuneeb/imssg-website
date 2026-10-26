@@ -62,6 +62,30 @@ export const Results: React.FC<ResultsProps> = ({ setCurrentTab }) => {
           </div>
         </section>
 
+        {/* Felicitation Ceremony Spotlight */}
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+          <div className="lg:col-span-7 space-y-3">
+            <span className="text-xs font-bold text-amber-800 uppercase tracking-widest bg-amber-50 border border-amber-200 px-3 py-1 rounded-full">
+              Annual Merit Convocation
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
+              Honoring Academic Excellence & Board Distinction
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Every academic year, SMS Islamia Model Secondary School celebrates the dedication, discipline, and remarkable achievements of its Class 10th JKBOSE board distinction holders with trophies, merit certificates, and community recognition before parents and faculty.
+            </p>
+          </div>
+          <div className="lg:col-span-5">
+            <div className="rounded-2xl overflow-hidden shadow-md border-2 border-slate-200 h-64 bg-slate-100 group">
+              <img
+                src="/images/annual-event.jpg"
+                alt="Annual Merit Felicitation Ceremony at IMS Garoora"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </div>
+        </section>
+
         {/* Board Toppers Wall of Fame */}
         <section className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200 gap-2">

@@ -28,6 +28,7 @@ export const Academics: React.FC<AcademicsProps> = ({ setCurrentTab }) => {
       age: '3 to 5 Years',
       icon: Baby,
       badge: 'Play-way & Montessori Methodology',
+      image: '/images/photos/714715828_1329040428556782_4345582124694578900_n.jpg',
       description: 'Our Kindergarten wing provides a nurturing, cheerful, and secure atmosphere where young learners take their first joyful steps into formal education through sensory exploration, language immersion, and social play.',
       keyPillars: [
         'Phonics-based English reading and foundational vocabulary',
@@ -45,6 +46,7 @@ export const Academics: React.FC<AcademicsProps> = ({ setCurrentTab }) => {
       age: '6 to 10 Years',
       icon: BookOpen,
       badge: 'Foundational Competence & Literacy',
+      image: '/images/photos/718189757_1482628500011439_8373460093371938421_n.jpg',
       description: 'The Primary Wing transitions students into disciplined academic inquiry. It strengthens foundational reading comprehension, computational math, environmental consciousness, and dual-language fluency.',
       keyPillars: [
         'Interactive numeracy, mental math, and conceptual problem-solving',
@@ -62,6 +64,7 @@ export const Academics: React.FC<AcademicsProps> = ({ setCurrentTab }) => {
       age: '11 to 13 Years',
       icon: BrainCircuit,
       badge: 'Experiential Science & Analytical Thinking',
+      image: '/images/gallery/imss-7.jpg',
       description: 'Middle school marks the bridge between foundational schooling and higher secondary rigor. Students delve into specialized sciences, social sciences, computer coding, and co-curricular leadership.',
       keyPillars: [
         'Distinct focus on Physics, Chemistry, and Biology practical demonstrations',
@@ -79,6 +82,7 @@ export const Academics: React.FC<AcademicsProps> = ({ setCurrentTab }) => {
       age: '14 to 16 Years',
       icon: GraduationCap,
       badge: 'Board Excellence & Competitive Readiness',
+      image: '/images/hero-slide3.jpg',
       description: 'Our Secondary Wing is celebrated for its historic 100% pass record in the Jammu & Kashmir Board of School Education (JKBOSE) Class 10th examinations. We provide rigorous academic mentoring, intensive test series, and board preparation.',
       keyPillars: [
         'Intensive coverage of JKBOSE board syllabus with past-10-year question solving',
@@ -154,18 +158,32 @@ export const Academics: React.FC<AcademicsProps> = ({ setCurrentTab }) => {
 
         {/* Selected Wing Details Card */}
         <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-10 space-y-8">
-          {/* Header of Wing */}
-          <div className="border-b border-slate-200 pb-6">
-            <div className="inline-flex items-center gap-2 text-xs font-bold text-amber-700 bg-amber-50 px-3 py-1 rounded-md border border-amber-200 mb-2">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>{current.badge}</span>
+          {/* Header of Wing with Contextual Visual Banner */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border-b border-slate-200 pb-8">
+            <div className="lg:col-span-7 space-y-3">
+              <div className="inline-flex items-center gap-2 text-xs font-bold text-amber-700 bg-amber-50 px-3 py-1 rounded-md border border-amber-200">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>{current.badge}</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
+                {current.title}
+              </h2>
+              <p className="text-amber-700 font-bold text-sm">
+                {current.subtitle} • Target Age: {current.age}
+              </p>
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                {current.description}
+              </p>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
-              {current.title} ({current.subtitle})
-            </h2>
-            <p className="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
-              {current.description}
-            </p>
+            <div className="lg:col-span-5">
+              <div className="rounded-2xl overflow-hidden shadow-lg border-2 border-slate-200 h-64 bg-slate-100 group">
+                <img
+                  src={current.image}
+                  alt={current.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Grid of Key Features & Subjects */}

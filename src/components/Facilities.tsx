@@ -26,7 +26,7 @@ export const Facilities: React.FC<FacilitiesProps> = ({ setCurrentTab }) => {
       icon: FlaskConical,
       title: "Composite Science Laboratories",
       subtitle: "Physics, Chemistry & Biology Practical Hub",
-      image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/gallery/imss-7.jpg",
       description: "Our high-standard science laboratories are designed to turn textbook theories into tangible discovery. Equipped with modern microscopes, chemical apparatus, electrical circuitry, and botanical specimens in compliance with JKBOSE practical standards.",
       highlights: [
         "Individual experimental workstations with safety hoods and eyewash stations",
@@ -39,7 +39,7 @@ export const Facilities: React.FC<FacilitiesProps> = ({ setCurrentTab }) => {
       icon: Monitor,
       title: "ICT & Digital Computer Center",
       subtitle: "Modern Computing & Digital Fluency",
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/photos/721135660_947345001658595_7591833205261027102_n.jpg",
       description: "Digital literacy is an essential life skill. Our computer lab provides dedicated individual computer terminals loaded with modern educational software, programming environments, and high-speed internet connectivity.",
       highlights: [
         "1:1 Student-to-computer ratio during practical periods",
@@ -52,7 +52,7 @@ export const Facilities: React.FC<FacilitiesProps> = ({ setCurrentTab }) => {
       icon: BookOpen,
       title: "Rich Reference Library & Reading Room",
       subtitle: "Over 4,500 Books, Periodicals & Journals",
-      image: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/photos/786914263_17927632356403662_6242522985867825274_n.jpg",
       description: "A serene reading sanctuary housing thousands of curated titles including NCERT references, regional Urdu literature, Islamic historical volumes, scientific encyclopedias, and regional newspapers.",
       highlights: [
         "Dedicated quiet study zones and comfortable reading furniture",
@@ -65,7 +65,7 @@ export const Facilities: React.FC<FacilitiesProps> = ({ setCurrentTab }) => {
       icon: Trophy,
       title: "Sports Grounds & Physical Fitness",
       subtitle: "Cricket, Volleyball, Athletics & Martial Arts",
-      image: "https://images.unsplash.com/photo-1531415074868-036b107e775a?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/sports-day.webp",
       description: "Physical vitality and sportsmanship are integral to character building. We provide outdoor fields and indoor game equipment enabling healthy competition and team spirit.",
       highlights: [
         "Spacious outdoor playground overlooking the foothills of Garoora",
@@ -78,7 +78,7 @@ export const Facilities: React.FC<FacilitiesProps> = ({ setCurrentTab }) => {
       icon: HeartHandshake,
       title: "Islamic Studies & Moral Development",
       subtitle: "Nurturing Character (Tarbiya) & Values",
-      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/cultural-event.jpg",
       description: "Living up to the name 'Islamia Model School', we cultivate moral purity, empathy, truthfulness, and reverence for divine teachings alongside contemporary academics.",
       highlights: [
         "Tajweed and Nazra Quran guidance with expert instructors",
@@ -91,7 +91,7 @@ export const Facilities: React.FC<FacilitiesProps> = ({ setCurrentTab }) => {
       icon: Bus,
       title: "Safe & Dependable Bus Transport",
       subtitle: "Covering Garoora & Wider Bandipora Environs",
-      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/photos/773378860_1788335945522383_8964915786789054036_n.jpg",
       description: "A well-maintained fleet of school buses with experienced, verified drivers and vigilant attendants ensuring punctual, safe transit for students residing across various localities.",
       highlights: [
         "Strict adherence to speed limits and school bus safety protocols",

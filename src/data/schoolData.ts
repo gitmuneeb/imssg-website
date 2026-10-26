@@ -207,7 +207,71 @@ export const RESULTS_DATA: StudentResult[] = [
 
 export const GALLERY_DATA: GalleryPhoto[] = [
   {
-    id: "gal-1",
+    id: "gal-main-campus",
+    title: "IMS Garoora Main Campus & Academic Block",
+    category: "Campus",
+    imageUrl: "/images/hero-main.jpg",
+    caption: "The scenic main campus of SMS Islamia Model Secondary School in Garoora, Bandipora set against the majestic Himalayan backdrop.",
+    date: "2026"
+  },
+  {
+    id: "gal-campus-community",
+    title: "Morning Courtyard & Student Gathering",
+    category: "Campus",
+    imageUrl: "/images/hero-slide2.jpg",
+    caption: "Students and faculty gathered in the school courtyard during daily assembly and morning moral reflections.",
+    date: "2026"
+  },
+  {
+    id: "gal-academics-senior",
+    title: "Secondary Wing Academic Excellence (JKBOSE)",
+    category: "Academics",
+    imageUrl: "/images/hero-slide3.jpg",
+    caption: "Secondary students preparing diligently with dedicated faculty for board merit and competitive milestones.",
+    date: "2026"
+  },
+  {
+    id: "gal-sports-day",
+    title: "Annual Sports Meet & Inter-House Athletics",
+    category: "Sports",
+    imageUrl: "/images/sports-day.webp",
+    caption: "Students actively participating in track events, outdoor athletics, and team sports fostering health and resilience.",
+    date: "2026"
+  },
+  {
+    id: "gal-cultural-seerat",
+    title: "Seerat-un-Nabi & Husn-e-Qirat Conference",
+    category: "Cultural",
+    imageUrl: "/images/cultural-event.jpg",
+    caption: "Annual spiritual gathering and Quranic recitation competition celebrating divine guidance, moral ethics, and Adab.",
+    date: "2026"
+  },
+  {
+    id: "gal-annual-felicitation",
+    title: "Annual Day & Merit Awards Distribution",
+    category: "Events",
+    imageUrl: "/images/annual-event.jpg",
+    caption: "Felicitating Class 10th JKBOSE Star Achievers, board distinction holders, and co-curricular champions with trophies and certificates.",
+    date: "2026"
+  },
+  {
+    id: "gal-science-exhibition",
+    title: "Science Experiments & Working Robotics Models",
+    category: "Academics",
+    imageUrl: "/images/gallery/imss-7.jpg",
+    caption: "Hands-on student demonstrations and science exhibition projects in biology, physics, and environmental conservation.",
+    date: "2026"
+  },
+  {
+    id: "gal-kindergarten-learning",
+    title: "Kindergarten Play-Way & Foundational Activities",
+    category: "Academics",
+    imageUrl: "/images/gallery/imss-8.jpg",
+    caption: "Joyful foundational learning activities nurturing young minds in a caring, loving, and supportive atmosphere.",
+    date: "2026"
+  },
+  {
+    id: "gal-assembly-discipline",
     title: "School Morning Assembly & Moral Discipline",
     category: "Campus",
     imageUrl: "/images/gallery/imss-4.jpg",
@@ -215,55 +279,39 @@ export const GALLERY_DATA: GalleryPhoto[] = [
     date: "2026"
   },
   {
-    id: "gal-2",
-    title: "Classroom Learning & Interactive Pedagogy",
+    id: "gal-outdoor-games",
+    title: "Outdoor Games & Team Sports Activities",
+    category: "Sports",
+    imageUrl: "/images/gallery/imss-11.jpg",
+    caption: "Students participating in outdoor recreational games fostering teamwork, discipline, and leadership.",
+    date: "2026"
+  },
+  {
+    id: "gal-moral-circle",
+    title: "Moral Education & Islamic Studies Circle",
+    category: "Cultural",
+    imageUrl: "/images/gallery/imss-12.jpg",
+    caption: "Values-based guidance focusing on Adab, social responsibility, integrity, and community welfare.",
+    date: "2026"
+  },
+  {
+    id: "gal-student-recognition",
+    title: "Academic Recognition & Star Performers",
+    category: "Events",
+    imageUrl: "/images/gallery/imss-14.jpg",
+    caption: "Celebrating distinguished student achievements with certificates, medals, and academic awards.",
+    date: "2026"
+  },
+  {
+    id: "gal-classroom-pedagogy",
+    title: "Interactive Classroom Learning & Discussion",
     category: "Academics",
     imageUrl: "/images/gallery/imss-2.jpg",
     caption: "Students engaged in interactive conceptual learning with dedicated subject teachers.",
     date: "2026"
   },
   {
-    id: "gal-3",
-    title: "Annual Sports Meet & Athletic Competitions",
-    category: "Sports",
-    imageUrl: "/images/gallery/imss-3.jpg",
-    caption: "Inter-house athletic events promoting physical fitness, resilience, and sportsmanship among students.",
-    date: "2026"
-  },
-  {
-    id: "gal-4",
-    title: "Seerat-un-Nabi & Naat Khawani Conference",
-    category: "Cultural",
-    imageUrl: "/images/gallery/imss-5.jpg",
-    caption: "Spiritual gatherings and Seerat conferences celebrating Islamic values and moral ethics.",
-    date: "2026"
-  },
-  {
-    id: "gal-5",
-    title: "Science Experiments & Working Project Models",
-    category: "Academics",
-    imageUrl: "/images/gallery/imss-7.jpg",
-    caption: "Hands-on student demonstrations and science exhibition projects in biology, physics, and chemistry.",
-    date: "2026"
-  },
-  {
-    id: "gal-6",
-    title: "Student Activities & Kindergarten Play-Way Learning",
-    category: "Academics",
-    imageUrl: "/images/gallery/imss-8.jpg",
-    caption: "Joyful foundational learning activities nurturing young minds in a caring, supportive atmosphere.",
-    date: "2026"
-  },
-  {
-    id: "gal-7",
-    title: "Prize Distribution & Student Felicitations",
-    category: "Events",
-    imageUrl: "/images/gallery/imss-9.jpg",
-    caption: "Honoring academic high-performers, competition winners, and board distinction holders.",
-    date: "2026"
-  },
-  {
-    id: "gal-8",
+    id: "gal-community-milestones",
     title: "Campus Events & Community Celebrations",
     category: "Events",
     imageUrl: "/images/gallery/imss-10.jpg",
@@ -271,35 +319,19 @@ export const GALLERY_DATA: GalleryPhoto[] = [
     date: "2026"
   },
   {
-    id: "gal-9",
-    title: "Outdoor Games & Team Sports",
-    category: "Sports",
-    imageUrl: "/images/gallery/imss-11.jpg",
-    caption: "Students participating in outdoor recreational games fostering teamwork and leadership.",
-    date: "2026"
-  },
-  {
-    id: "gal-10",
-    title: "Moral Education & Islamic Studies Circle",
-    category: "Cultural",
-    imageUrl: "/images/gallery/imss-12.jpg",
-    caption: "Values-based guidance focusing on Adab, social responsibility, and community care.",
-    date: "2026"
-  },
-  {
-    id: "gal-11",
+    id: "gal-art-craft",
     title: "Art, Creativity & Student Craft Exhibition",
     category: "Cultural",
     imageUrl: "/images/gallery/imss-13.jpg",
-    caption: "Display of student artwork, calligraphy, and creative crafts nurtured by our faculty.",
+    caption: "Display of student artwork, calligraphy, and creative crafts nurtured by our art faculty.",
     date: "2026"
   },
   {
-    id: "gal-12",
-    title: "Academic Recognition & Star Performers",
-    category: "Events",
-    imageUrl: "/images/gallery/imss-14.jpg",
-    caption: "Celebrating distinguished student achievements with certificates, medals, and trophies.",
+    id: "gal-sports-spirit",
+    title: "Inter-House Athletic Spirit & Teamwork",
+    category: "Sports",
+    imageUrl: "/images/gallery/imss-3.jpg",
+    caption: "Inter-house athletic events promoting physical fitness, stamina, and camaraderie.",
     date: "2026"
   }
 ];

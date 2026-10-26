@@ -209,12 +209,24 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab, openPortal }) => 
         </div>
 
         {/* Bottom Sub-Footer */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4">
           <p>© {new Date().getFullYear()} SMS Islamia Model Secondary School, Garoora. All Rights Reserved.</p>
-          <div className="flex items-center space-x-4">
-            <span>UDISE: 01160100803</span>
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+            <span>UDISE: {SCHOOL_INFO.udiseCode}</span>
             <span>•</span>
-            <span>Recognized by DSEK / JKBOSE</span>
+            <span>Affiliated with JKBOSE / DSEK</span>
+            <span>•</span>
+            <span className="text-slate-300">
+              Designed by{' '}
+              <a
+                href="https://ilmorasoftlabs.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-amber-400 hover:text-amber-300 font-semibold underline underline-offset-2 transition-colors hover:text-white"
+              >
+                ilmora SoftLabs
+              </a>
+            </span>
           </div>
         </div>
       </div>

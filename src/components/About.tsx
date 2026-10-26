@@ -71,17 +71,17 @@ export const About: React.FC<AboutProps> = ({ setCurrentTab }) => {
           </div>
 
           <div className="relative">
-            <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+            <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
               <img 
-                src="/images/gallery/imss-4.jpg" 
-                alt="SMS Islamia Model Secondary School Campus" 
+                src="/images/hero-slide2.jpg" 
+                alt="SMS Islamia Model Secondary School Campus & Community" 
                 className="w-full h-96 object-cover"
               />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-blue-950 text-white p-5 rounded-xl shadow-xl max-w-xs border border-blue-900 hidden sm:block">
               <Sparkles className="w-6 h-6 text-amber-400 mb-2" />
               <p className="text-xs text-slate-300">
-                "Education is not merely the transmission of facts, but the ignition of intellect and integrity."
+                "Education is not merely the transmission of facts, but the ignition of intellect, empathy, and integrity."
               </p>
             </div>
           </div>
@@ -185,6 +185,68 @@ export const About: React.FC<AboutProps> = ({ setCurrentTab }) => {
                   <h4 className="font-bold text-slate-900 text-sm">The Principal</h4>
                   <p className="text-xs text-slate-500">S.M.S Islamia Model Secondary School, Garoora</p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Campus Atmosphere & Visual Heritage */}
+        <section className="space-y-6">
+          <div className="text-center max-w-2xl mx-auto">
+            <span className="text-xs font-bold text-amber-700 uppercase tracking-widest bg-amber-50 border border-amber-200 px-3 py-1 rounded-full">
+              Campus Highlights
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">
+              Life, Discipline & Values at Garoora
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm group">
+              <div className="h-48 overflow-hidden bg-slate-100">
+                <img
+                  src="/images/gallery/imss-4.jpg"
+                  alt="Morning Assembly & Discipline"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="font-bold text-slate-900 text-sm">Morning Assembly & Daily Adab</h3>
+                <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+                  Every school day begins with Quranic recitation, the national anthem, moral pledges, and student presentations.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm group">
+              <div className="h-48 overflow-hidden bg-slate-100">
+                <img
+                  src="/images/cultural-event.jpg"
+                  alt="Husn-e-Qirat & Seerat Conferences"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="font-bold text-slate-900 text-sm">Spiritual & Moral Foundation</h3>
+                <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+                  Regular Seerat conferences, Husn-e-Qirat competitions, and Islamic ethics shaping balanced personalities.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm group">
+              <div className="h-48 overflow-hidden bg-slate-100">
+                <img
+                  src="/images/hero-main.jpg"
+                  alt="Scenic Garoora Bandipora Campus"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="font-bold text-slate-900 text-sm">Scenic Garoora Campus</h3>
+                <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+                  Located along the Bandipora-Srinagar corridor with well-ventilated classrooms, playfields, and mountain vistas.
+                </p>
               </div>
             </div>
           </div>

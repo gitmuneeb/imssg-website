@@ -321,14 +321,34 @@ export const Admissions: React.FC<AdmissionsProps> = ({ setCurrentTab }) => {
         )}
 
         {/* Working Online Admission Application Form */}
-        <section className="bg-white p-6 sm:p-10 rounded-2xl border border-slate-200 shadow-sm">
-          <div className="border-b border-slate-200 pb-5 mb-8">
-            <span className="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-100 px-3 py-1 rounded-full">
-              Registration Form
-            </span>
-            <h2 className="text-2xl font-extrabold text-slate-900 mt-2">
-              Online Admission Registration (Session 2026-27)
-            </h2>
+        <section className="bg-white p-6 sm:p-10 rounded-2xl border border-slate-200 shadow-sm space-y-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center bg-blue-50/70 p-6 rounded-2xl border border-blue-100">
+            <div className="lg:col-span-8 space-y-2">
+              <span className="text-xs font-bold text-blue-900 uppercase tracking-widest bg-blue-100 px-3 py-1 rounded-full">
+                Session 2026-27 Enrollment
+              </span>
+              <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900">
+                Begin Your Child's Journey at IMS Garoora
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Admissions are open for Kindergarten (Nursery, LKG, UKG) and limited lateral seats across Primary and Middle classes. Experience value-based modern schooling in a caring environment.
+              </p>
+            </div>
+            <div className="lg:col-span-4">
+              <div className="h-40 rounded-xl overflow-hidden shadow border border-slate-200">
+                <img
+                  src="/images/photos/695004580_1980855626129725_5040692545407297150_n.jpg"
+                  alt="Students at IMS Garoora"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="border-b border-slate-200 pb-4">
+            <h3 className="text-xl font-extrabold text-slate-900">
+              Online Admission Registration Form
+            </h3>
             <p className="text-slate-500 text-xs sm:text-sm mt-1">
               Please provide authentic details. Fields marked with an asterisk (<span className="text-red-500">*</span>) are mandatory.
             </p>
