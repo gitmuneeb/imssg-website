@@ -40,9 +40,9 @@ interface SlideData {
 
 // Boy Student Avatar Icon (Indicates No Image Available)
 const BoyAvatar: React.FC = () => (
-  <div className="relative w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-slate-900 via-[#132238] to-[#0c1829] p-1.5 select-none overflow-hidden">
+  <div className="relative w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-slate-900 via-[#132238] to-[#0c1829] p-1 select-none overflow-hidden">
     {/* Boy Silhouette with Uniform */}
-    <svg viewBox="0 0 80 90" fill="none" className="w-16 h-18 sm:w-18 sm:h-20 drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 80 90" fill="none" className="w-12 h-14 sm:w-16 sm:h-18 drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
       {/* Boy Hair & Head */}
       <path d="M26 30C26 18 33 10 40 10C47 10 54 18 54 30C54 38 48 45 40 45C32 45 26 38 26 30Z" fill="#fcd34d" fillOpacity="0.9" />
       <path d="M25 25C26 16 33 9 40 9C47 9 54 16 55 25C51 21 44 20 40 21C35 20 28 21 25 25Z" fill="#b45309" />
@@ -55,7 +55,7 @@ const BoyAvatar: React.FC = () => (
       <polygon points="40,58 37,76 40,84 43,76" fill="#dc2626" />
     </svg>
     {/* "No Image" Label Pill */}
-    <span className="absolute bottom-1 bg-black/85 text-amber-300 text-[8px] sm:text-[8.5px] font-black px-1.5 py-0.5 rounded border border-amber-400/50 tracking-wider uppercase shadow-sm">
+    <span className="absolute bottom-1 bg-black/85 text-amber-300 text-[7px] sm:text-[8px] font-black px-1.5 py-0.5 rounded border border-amber-400/50 tracking-wider uppercase shadow-sm">
       No Image
     </span>
   </div>
@@ -63,9 +63,9 @@ const BoyAvatar: React.FC = () => (
 
 // Girl Student Avatar Icon (Indicates No Image Available)
 const GirlAvatar: React.FC = () => (
-  <div className="relative w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-slate-900 via-[#2d1124] to-[#1a0815] p-1.5 select-none overflow-hidden">
+  <div className="relative w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-slate-900 via-[#2d1124] to-[#1a0815] p-1 select-none overflow-hidden">
     {/* Girl Silhouette with School Scarf / Hijab */}
-    <svg viewBox="0 0 80 90" fill="none" className="w-16 h-18 sm:w-18 sm:h-20 drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 80 90" fill="none" className="w-12 h-14 sm:w-16 sm:h-18 drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
       {/* Head Scarf Draping */}
       <path d="M22 36C22 18 30 8 40 8C50 8 58 18 58 36C58 48 54 58 40 58C26 58 22 48 22 36Z" fill="#047857" stroke="#fbbf24" strokeWidth="1.5" />
       {/* Inner Face Oval */}
@@ -79,7 +79,7 @@ const GirlAvatar: React.FC = () => (
       <polygon points="38,59 40,75 42,59" fill="#10b981" />
     </svg>
     {/* "No Image" Label Pill */}
-    <span className="absolute bottom-1 bg-black/85 text-amber-300 text-[8px] sm:text-[8.5px] font-black px-1.5 py-0.5 rounded border border-amber-400/50 tracking-wider uppercase shadow-sm">
+    <span className="absolute bottom-1 bg-black/85 text-amber-300 text-[7px] sm:text-[8px] font-black px-1.5 py-0.5 rounded border border-amber-400/50 tracking-wider uppercase shadow-sm">
       No Image
     </span>
   </div>
@@ -400,21 +400,27 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
             </div>
           </div>
 
-          {/* Student Showcase: EXACTLY 5 STUDENTS WITH BOY / GIRL "NO IMAGE" AVATARS */}
-          <div className="px-3 sm:px-6 py-4 sm:py-5">
-            <div className="grid grid-cols-1 sm:grid-cols-5 gap-3 sm:gap-4 max-w-5xl mx-auto">
+          {/* Student Showcase: EXACTLY 5 STUDENTS TAKING 2 ROWS ON MOBILE & TABLETS (3 in Row 1, 2 Centered in Row 2), 1 ROW ON DESKTOP */}
+          <div className="px-2 sm:px-4 lg:px-6 py-3 sm:py-4 lg:py-5">
+            <div className="grid grid-cols-6 lg:grid-cols-5 gap-2 sm:gap-3 lg:gap-4 max-w-5xl mx-auto">
               {current.achievers.map((achiever, idx) => (
                 <div 
                   key={idx} 
-                  className="flex flex-col items-center text-center group bg-black/35 hover:bg-black/55 p-3 rounded-2xl border border-amber-400/40 hover:border-amber-400 shadow-md transition-all duration-300"
+                  className={`flex flex-col items-center text-center group bg-black/35 hover:bg-black/55 p-2 sm:p-2.5 lg:p-3 rounded-xl sm:rounded-2xl border border-amber-400/40 hover:border-amber-400 shadow-md transition-all duration-300 ${
+                    idx < 3
+                      ? 'col-span-2 lg:col-span-1'
+                      : idx === 3
+                      ? 'col-span-2 col-start-2 lg:col-start-auto lg:col-span-1'
+                      : 'col-span-2 lg:col-span-1'
+                  }`}
                 >
                   {/* Clear Golden Achievement Tag at top of card */}
-                  <div className="bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-950 text-[9px] sm:text-[10px] font-black px-2.5 py-0.5 rounded-full shadow-md border border-white whitespace-nowrap mb-2 leading-tight">
+                  <div className="bg-gradient-to-r from-amber-400 to-yellow-300 text-slate-950 text-[8px] sm:text-[9px] lg:text-[10px] font-black px-1.5 sm:px-2 py-0.5 rounded-full shadow-md border border-white whitespace-nowrap mb-1.5 leading-tight">
                     {achiever.badge}
                   </div>
 
                   {/* Boy / Girl Avatar Frame Indicating No Photo */}
-                  <div className="bg-gradient-to-b from-amber-300 via-amber-400 to-yellow-500 p-1 rounded-xl shadow-xl w-24 sm:w-28 aspect-[3/4]">
+                  <div className="bg-gradient-to-b from-amber-300 via-amber-400 to-yellow-500 p-0.5 sm:p-1 rounded-xl shadow-xl w-16 sm:w-20 md:w-24 lg:w-28 aspect-[3/4]">
                     <div className="w-full h-full rounded-lg overflow-hidden border border-white/60">
                       {achiever.gender === 'boy' ? (
                         <BoyAvatar />
@@ -426,7 +432,7 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
 
                   {/* Student Name */}
                   <span
-                    className="font-serif font-black text-amber-200 text-xs sm:text-sm uppercase tracking-tight mt-2.5 leading-tight block"
+                    className="font-serif font-black text-amber-200 text-[10px] sm:text-xs lg:text-sm uppercase tracking-tight mt-1.5 sm:mt-2 leading-tight block line-clamp-2"
                     style={{ fontFamily: 'Georgia, Cambria, "Times New Roman", Times, serif' }}
                   >
                     {achiever.name}
@@ -434,14 +440,14 @@ export const AchievementModal: React.FC<AchievementModalProps> = ({
 
                   {/* Score / Award Title */}
                   <span
-                    className="font-serif font-black text-amber-400 text-xs sm:text-sm leading-snug mt-1 block"
+                    className="font-serif font-black text-amber-400 text-[10.5px] sm:text-xs lg:text-sm leading-snug mt-0.5 sm:mt-1 block"
                     style={{ fontFamily: 'Georgia, Cambria, "Times New Roman", Times, serif' }}
                   >
                     {achiever.scoreOrAward}
                   </span>
 
                   {/* Clearly Visible Achievement Description */}
-                  <span className="text-[10px] sm:text-[11px] text-amber-100 font-semibold leading-tight block mt-1.5 px-1">
+                  <span className="text-[8.5px] sm:text-[9.5px] lg:text-[11px] text-amber-100 font-semibold leading-tight block mt-1 px-0.5 line-clamp-2">
                     {achiever.achievement}
                   </span>
                 </div>
