@@ -205,7 +205,7 @@ export const About: React.FC<AboutProps> = ({ setCurrentTab }) => {
             <div className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm group">
               <div className="h-48 overflow-hidden bg-slate-100">
                 <img
-                  src="/images/gallery/imss-4.jpg"
+                  src="/images/photos/713685137_2207841683323724_8590933976855099110_n.jpg"
                   alt="Morning Assembly & Discipline"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />

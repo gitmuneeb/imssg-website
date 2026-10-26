@@ -250,7 +250,7 @@ export const GALLERY_DATA: GalleryPhoto[] = [
     id: "gal-annual-felicitation",
     title: "Annual Day & Merit Awards Distribution",
     category: "Events",
-    imageUrl: "/images/annual-event.jpg",
+    imageUrl: "/images/photos/788574686_28354264344190150_4825411522843497466_n.jpg",
     caption: "Felicitating Class 10th JKBOSE Star Achievers, board distinction holders, and co-curricular champions with trophies and certificates.",
     date: "2026"
   },
@@ -274,7 +274,7 @@ export const GALLERY_DATA: GalleryPhoto[] = [
     id: "gal-assembly-discipline",
     title: "School Morning Assembly & Moral Discipline",
     category: "Campus",
-    imageUrl: "/images/gallery/imss-4.jpg",
+    imageUrl: "/images/photos/713685137_2207841683323724_8590933976855099110_n.jpg",
     caption: "Daily morning assembly at Garoora campus featuring spiritual recitations, moral pledge, and student reflections.",
     date: "2026"
   },

@@ -78,8 +78,8 @@ export const Results: React.FC<ResultsProps> = ({ setCurrentTab }) => {
           <div className="lg:col-span-5">
             <div className="rounded-2xl overflow-hidden shadow-md border-2 border-slate-200 h-64 bg-slate-100 group">
               <img
-                src="/images/annual-event.jpg"
-                alt="Annual Merit Felicitation Ceremony at IMS Garoora"
+                src="/images/hero-slide3.jpg"
+                alt="Secondary Wing Academic Achievers at IMS Garoora"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>

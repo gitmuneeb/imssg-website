@@ -26,7 +26,7 @@ export const Hero: React.FC<HeroProps> = ({ setCurrentTab, openNoticeModal }) =>
 
   const slides = [
     {
-      image: "/images/hero-main.jpg",
+      image: "/images/main-img.jpg",
       badge: "Legacy of Excellence Since 1982 • Garoora Campus",
       title: "Nurturing Intellectual Brilliance & Moral Character",
       subtitle: "Over four decades of dedicated service providing premier English-medium education grounded in divine values, ethics, and academic rigor in Bandipora.",
@@ -50,10 +50,10 @@ export const Hero: React.FC<HeroProps> = ({ setCurrentTab, openNoticeModal }) =>
       secondaryBtn: { text: "Download Prospectus", tab: "downloads" as TabType }
     },
     {
-      image: "/images/annual-event.jpg",
-      badge: "Annual Honors, Seerat & Youth Leadership",
-      title: "Celebrating Student Achievement & Ethical Values",
-      subtitle: "Honoring academic high-scorers, Quranic recitation winners, and athletic champions with certificates, medals, and community recognition.",
+      image: "/images/sports-day.webp",
+      badge: "Athletics & Physical Fitness Excellence",
+      title: "Building Sportsmanship, Health & Team Spirit",
+      subtitle: "Spacious outdoor playing fields, volleyball, cricket, badminton, and athletic meets instilling stamina, character, and lifelong leadership.",
       primaryBtn: { text: "Explore Photo Gallery", tab: "gallery" as TabType },
       secondaryBtn: { text: "Notice Board & Circulars", tab: "notices" as TabType }
     }
@@ -112,10 +112,12 @@ export const Hero: React.FC<HeroProps> = ({ setCurrentTab, openNoticeModal }) =>
           >
             {/* Background Image with Dark Vignette */}
             <div 
-              className="absolute inset-0 bg-cover bg-center transform scale-105 transition-transform duration-10000"
+              className="absolute inset-0 bg-cover bg-center transform scale-100 transition-transform duration-10000 filter contrast-[1.08] brightness-[1.05] saturate-[1.12]"
               style={{ backgroundImage: `url(${slide.image})` }}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0c2340]/95 via-slate-950/80 to-[#0c2340]/60" />
+            {/* Luminous, directional gradient: preserves building & mountain clarity while protecting text legibility */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0c2340]/90 via-[#0c2340]/60 to-transparent lg:w-7/12" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0c2340] via-transparent to-black/30" />
             
             {/* Slide Content */}
             <div className="relative max-w-7xl mx-auto px-4 sm:px-8 py-16 h-full flex flex-col justify-center">
@@ -125,11 +127,11 @@ export const Hero: React.FC<HeroProps> = ({ setCurrentTab, openNoticeModal }) =>
                   <span>{slide.badge}</span>
                 </div>
 
-                <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight drop-shadow-md">
+                <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]">
                   {slide.title}
                 </h2>
 
-                <p className="text-sm sm:text-lg text-slate-200 leading-relaxed max-w-xl font-normal drop-shadow">
+                <p className="text-sm sm:text-lg text-slate-100 leading-relaxed max-w-xl font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
                   {slide.subtitle}
                 </p>
 
@@ -153,6 +155,46 @@ export const Hero: React.FC<HeroProps> = ({ setCurrentTab, openNoticeModal }) =>
             </div>
           </div>
         ))}
+
+        {/* Desktop Live Campus Spotlight & Thumbnails Controller */}
+        <div className="absolute right-8 top-1/2 -translate-y-1/2 z-20 hidden lg:flex flex-col items-end space-y-3.5">
+          <div className="flex items-center gap-2 bg-[#0c2340]/90 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20 shadow-2xl text-xs text-slate-200">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span className="font-bold text-amber-400">Garoora Campus</span>
+            <span className="text-slate-400">•</span>
+            <span>Est. 1982 | JKBOSE</span>
+          </div>
+
+          <div className="bg-[#0c2340]/90 backdrop-blur-md p-3.5 rounded-2xl border border-white/20 shadow-2xl max-w-xs space-y-2.5">
+            <div className="flex items-center justify-between text-[11px] text-slate-300 px-1 font-semibold">
+              <span>Campus Highlights</span>
+              <span className="text-amber-400 font-mono font-bold">Slide {currentSlide + 1} of {slides.length}</span>
+            </div>
+            <div className="grid grid-cols-4 gap-2">
+              {slides.map((s, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentSlide(idx)}
+                  className={`relative h-14 rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${
+                    idx === currentSlide
+                      ? 'border-amber-400 ring-2 ring-amber-400/50 shadow-lg scale-105'
+                      : 'border-white/20 opacity-70 hover:opacity-100 hover:border-white/60'
+                  }`}
+                  title={s.badge}
+                >
+                  <img
+                    src={s.image}
+                    alt={s.badge}
+                    className="w-full h-full object-cover contrast-105 brightness-105 saturate-110"
+                  />
+                </button>
+              ))}
+            </div>
+            <p className="text-[10px] text-slate-400 px-1 leading-snug">
+              Featured: Main Building, Courtyard, Secondary Wing & Sports.
+            </p>
+          </div>
+        </div>
 
         {/* Carousel Prev/Next Buttons */}
         <button

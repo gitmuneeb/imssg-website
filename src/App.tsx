@@ -122,9 +122,9 @@ export function App() {
                   <div className="lg:col-span-5 relative">
                     <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                       <img 
-                        src="/images/gallery/imss-4.jpg" 
+                        src="/images/main-img.jpg" 
                         alt="Islamia Model Secondary School Garoora Campus" 
-                        className="w-full h-88 object-cover"
+                        className="w-full h-88 sm:h-96 object-cover contrast-105 brightness-105 saturate-110"
                       />
                     </div>
                     <div className="absolute -bottom-6 -right-4 bg-[#0c2340] text-white p-5 rounded-2xl shadow-xl max-w-xs border border-blue-900/60 hidden sm:block">
