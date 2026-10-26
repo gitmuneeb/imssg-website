@@ -2,15 +2,13 @@ import React, { useState } from 'react';
 import { 
   X, 
   UserCheck, 
-  Calendar, 
-  BookOpen, 
-  CreditCard, 
-  Bus, 
-  CheckCircle, 
-  Download, 
   Lock, 
-  LogOut,
-  AlertCircle
+  AlertCircle,
+  Clock,
+  Sparkles,
+  Phone,
+  ShieldCheck,
+  CheckCircle2
 } from 'lucide-react';
 import { SCHOOL_INFO } from '../data/schoolData';
 
@@ -20,259 +18,164 @@ interface PortalModalProps {
 }
 
 export const PortalModal: React.FC<PortalModalProps> = ({ isOpen, onClose }) => {
-  const [admissionNo, setAdmissionNo] = useState('IMSS/2026/104');
-  const [parentMobile, setParentMobile] = useState('9419012345');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [activeTab, setActiveTab] = useState<'overview' | 'attendance' | 'fees' | 'homework'>('overview');
-  const [errorMsg, setErrorMsg] = useState('');
+  const [admissionNo, setAdmissionNo] = useState('');
+  const [parentMobile, setParentMobile] = useState('');
+  const [promptMessage, setPromptMessage] = useState<string | null>(null);
 
   if (!isOpen) return null;
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!admissionNo.trim() || !parentMobile.trim()) {
-      setErrorMsg('Please enter Admission Number and Registered Mobile.');
-      return;
-    }
-    setErrorMsg('');
-    setIsLoggedIn(true);
+    const msg = "This feature will be added in future. The Student & Parent ERP Portal is currently under development.";
+    setPromptMessage(msg);
+    // Display a direct browser alert prompt
+    window.alert("This feature will be added in future. The Student & Parent Portal is currently under development.");
   };
 
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    setErrorMsg('');
+  const handleClose = () => {
+    setPromptMessage(null);
+    onClose();
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fade-in">
-      <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 flex flex-col">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-fade-in no-print">
+      <div className="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200 flex flex-col transform transition-all">
         {/* Header */}
-        <div className="p-5 bg-blue-950 text-white flex items-center justify-between rounded-t-2xl">
-          <div className="flex items-center gap-2">
-            <UserCheck className="w-5 h-5 text-amber-400" />
+        <div className="p-5 sm:p-6 bg-[#0c2340] text-white flex items-center justify-between border-b border-blue-900/50">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center border border-amber-400/30">
+              <UserCheck className="w-5 h-5" />
+            </div>
             <div>
-              <h3 className="font-extrabold text-sm sm:text-base">Student & Parent Portal</h3>
-              <p className="text-[11px] text-slate-300">SMS Islamia Model Secondary School, Garoora</p>
+              <div className="flex items-center gap-2">
+                <h3 className="font-extrabold text-sm sm:text-base leading-tight">Student & Parent Portal</h3>
+                <span className="bg-amber-400 text-slate-950 text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full shadow-sm">
+                  Coming Soon
+                </span>
+              </div>
+              <p className="text-[11px] text-slate-300 mt-0.5">{SCHOOL_INFO.formalName}</p>
             </div>
           </div>
           <button 
-            onClick={onClose}
-            className="p-1 rounded-full text-slate-300 hover:text-white hover:bg-blue-900 transition-colors"
+            onClick={handleClose}
+            className="p-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+            aria-label="Close Portal Modal"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Content */}
-        <div className="p-6">
-          {!isLoggedIn ? (
-            /* Login Form */
-            <div className="max-w-md mx-auto space-y-6 py-4">
-              <div className="text-center space-y-1">
-                <div className="w-12 h-12 bg-blue-100 text-blue-900 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Lock className="w-6 h-6" />
-                </div>
-                <h4 className="font-bold text-slate-900 text-lg">Parent / Student Authentication</h4>
-                <p className="text-xs text-slate-500">
-                  Access your child's attendance, assignments, and term marks.
-                </p>
-              </div>
-
-              {errorMsg && (
-                <div className="p-3 bg-red-50 text-red-600 rounded-lg text-xs flex items-center gap-2">
-                  <AlertCircle className="w-4 h-4 shrink-0" />
-                  <span>{errorMsg}</span>
-                </div>
-              )}
-
-              <form onSubmit={handleLogin} className="space-y-4 text-xs sm:text-sm">
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">
-                    Student Admission / Registration Number
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={admissionNo}
-                    onChange={(e) => setAdmissionNo(e.target.value)}
-                    placeholder="e.g. IMSS/2026/104"
-                    className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 focus:bg-white"
-                  />
-                  <span className="text-[10px] text-slate-400">Sample pre-filled for instant demo</span>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">
-                    Registered Parent Mobile Number
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    value={parentMobile}
-                    onChange={(e) => setParentMobile(e.target.value)}
-                    placeholder="e.g. 9419012345"
-                    className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 focus:bg-white"
-                  />
-                </div>
-
-                <div className="pt-2">
-                  <button
-                    type="submit"
-                    className="w-full py-2.5 bg-blue-950 hover:bg-blue-900 text-white font-bold rounded-xl shadow transition-colors flex items-center justify-center gap-2"
-                  >
-                    <span>Secure Sign In</span>
-                  </button>
-                </div>
-              </form>
-
-              <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-[11px] text-slate-500 text-center">
-                Need credentials or facing login issues? Call school office at <strong>{SCHOOL_INFO.contact.helpline}</strong>.
-              </div>
+        <div className="p-6 sm:p-8 space-y-6">
+          {/* Coming Soon Notice Card */}
+          <div className="text-center space-y-2">
+            <div className="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mx-auto border-2 border-amber-200 shadow-sm">
+              <Clock className="w-7 h-7 animate-pulse" />
             </div>
-          ) : (
-            /* Logged In Dashboard */
-            <div className="space-y-6">
-              {/* Student Header Strip */}
-              <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-blue-900 text-amber-300 font-bold flex items-center justify-center text-sm shadow">
-                    AH
-                  </div>
-                  <div>
-                    <h4 className="font-extrabold text-slate-900 text-sm sm:text-base">Ayaan Hilal Mir</h4>
-                    <p className="text-xs text-slate-500">
-                      Class: <strong>8th Green</strong> | Roll: <strong>24</strong> | Adm No: <strong>{admissionNo}</strong>
-                    </p>
-                  </div>
-                </div>
+            <div className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-800 bg-amber-50 border border-amber-300 px-3 py-1 rounded-full">
+              <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+              <span>Digital Portal — Under Active Development</span>
+            </div>
+            <h4 className="font-extrabold text-slate-900 text-lg sm:text-xl">
+              Parent & Student Authentication
+            </h4>
+            <p className="text-xs text-slate-500 max-w-sm mx-auto leading-relaxed">
+              Our digital portal for live student attendance, daily homework diaries, term marks, and online fee clearance is coming soon.
+            </p>
+          </div>
 
-                <button
-                  onClick={handleLogout}
-                  className="px-3 py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-semibold rounded-lg flex items-center gap-1.5 transition-colors self-start sm:self-center"
-                >
-                  <LogOut className="w-3.5 h-3.5" />
-                  <span>Logout</span>
-                </button>
+          {/* Prompt Message Banner (Rendered when Log In is clicked) */}
+          {promptMessage && (
+            <div className="p-4 bg-gradient-to-r from-amber-50 via-amber-100/60 to-amber-50 border-2 border-amber-400 rounded-2xl text-amber-950 shadow-md space-y-2 animate-fade-in">
+              <div className="flex items-center gap-2 font-black text-sm text-amber-950">
+                <AlertCircle className="w-5 h-5 text-amber-600 shrink-0" />
+                <span>Notice: Feature Coming Soon</span>
               </div>
-
-              {/* Sub-tabs */}
-              <div className="flex border-b border-slate-200 text-xs font-semibold">
-                <button
-                  onClick={() => setActiveTab('overview')}
-                  className={`pb-2 px-3 border-b-2 transition-colors ${
-                    activeTab === 'overview' ? 'border-blue-950 text-blue-950' : 'border-transparent text-slate-500'
-                  }`}
-                >
-                  Overview & Stats
-                </button>
-                <button
-                  onClick={() => setActiveTab('attendance')}
-                  className={`pb-2 px-3 border-b-2 transition-colors ${
-                    activeTab === 'attendance' ? 'border-blue-950 text-blue-950' : 'border-transparent text-slate-500'
-                  }`}
-                >
-                  Attendance (94.2%)
-                </button>
-                <button
-                  onClick={() => setActiveTab('homework')}
-                  className={`pb-2 px-3 border-b-2 transition-colors ${
-                    activeTab === 'homework' ? 'border-blue-950 text-blue-950' : 'border-transparent text-slate-500'
-                  }`}
-                >
-                  Homework & Diary
-                </button>
-                <button
-                  onClick={() => setActiveTab('fees')}
-                  className={`pb-2 px-3 border-b-2 transition-colors ${
-                    activeTab === 'fees' ? 'border-blue-950 text-blue-950' : 'border-transparent text-slate-500'
-                  }`}
-                >
-                  Fee Receipts
-                </button>
+              <p className="text-xs sm:text-sm font-bold text-amber-950 leading-relaxed">
+                This feature will be added in future.
+              </p>
+              <p className="text-xs text-amber-900/90 leading-relaxed">
+                The school administration is integrating the student ERP database for Academic Session 2026–27. For official student records, report cards, or fee verification, please contact the campus office directly.
+              </p>
+              <div className="pt-2 border-t border-amber-300/60 flex items-center gap-2 text-xs font-bold text-amber-950">
+                <Phone className="w-3.5 h-3.5 text-amber-700" />
+                <span>School Office Helpline: </span>
+                <a href={`tel:${SCHOOL_INFO.contact.helpline}`} className="underline hover:text-black">
+                  {SCHOOL_INFO.contact.helpline}
+                </a>
               </div>
-
-              {/* Tab Views */}
-              {activeTab === 'overview' && (
-                <div className="space-y-4">
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                    <div className="p-3 bg-blue-50 rounded-xl border border-blue-100 text-center">
-                      <span className="text-xl font-bold text-blue-950">94.2%</span>
-                      <span className="block text-[11px] text-slate-500 mt-0.5">Overall Attendance</span>
-                    </div>
-                    <div className="p-3 bg-emerald-50 rounded-xl border border-emerald-100 text-center">
-                      <span className="text-xl font-bold text-emerald-800">A1</span>
-                      <span className="block text-[11px] text-slate-500 mt-0.5">Term 1 Grade</span>
-                    </div>
-                    <div className="p-3 bg-amber-50 rounded-xl border border-amber-100 text-center">
-                      <span className="text-xl font-bold text-amber-900">Cleared</span>
-                      <span className="block text-[11px] text-slate-500 mt-0.5">Fee Status (Oct)</span>
-                    </div>
-                    <div className="p-3 bg-purple-50 rounded-xl border border-purple-100 text-center">
-                      <span className="text-xl font-bold text-purple-900">Bus #04</span>
-                      <span className="block text-[11px] text-slate-500 mt-0.5">Transport Stop</span>
-                    </div>
-                  </div>
-
-                  <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                    <h5 className="font-bold text-xs text-slate-800 mb-2">Teacher's Note for Parents:</h5>
-                    <p className="text-xs text-slate-600 italic">
-                      "Aayan is performing brilliantly in Mathematics and Science practical demonstrations. Active participation in the Seerat Conference elocution contest was commendable."
-                    </p>
-                    <div className="text-[10px] text-slate-400 mt-2">— Class Teacher, 8th Grade</div>
-                  </div>
-                </div>
-              )}
-
-              {activeTab === 'attendance' && (
-                <div className="space-y-3 text-xs">
-                  <div className="flex justify-between items-center p-3 bg-emerald-50 border border-emerald-200 rounded-lg text-emerald-900 font-semibold">
-                    <span>Present: 178 Days</span>
-                    <span>Absent: 11 Days</span>
-                    <span>Total Working Days: 189</span>
-                  </div>
-                  <p className="text-slate-500 text-xs">Student meets minimum 75% attendance criteria required for Term Board Examinations.</p>
-                </div>
-              )}
-
-              {activeTab === 'homework' && (
-                <div className="space-y-2 text-xs">
-                  <div className="p-3 bg-white border border-slate-200 rounded-lg flex justify-between items-center">
-                    <div>
-                      <strong className="block text-slate-900">Science: Chapter 8 - Reproduction in Animals</strong>
-                      <span className="text-slate-500 text-[11px]">Complete notebook diagram 8.3 & answer questions 1 to 5.</span>
-                    </div>
-                    <span className="text-amber-700 bg-amber-50 px-2 py-0.5 rounded text-[10px] font-bold">Due Tomorrow</span>
-                  </div>
-                  <div className="p-3 bg-white border border-slate-200 rounded-lg flex justify-between items-center">
-                    <div>
-                      <strong className="block text-slate-900">Mathematics: Exercise 9.2 (Algebraic Expressions)</strong>
-                      <span className="text-slate-500 text-[11px]">Solve word problems on homework register.</span>
-                    </div>
-                    <span className="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-[10px] font-bold">Checked</span>
-                  </div>
-                </div>
-              )}
-
-              {activeTab === 'fees' && (
-                <div className="space-y-2 text-xs">
-                  <div className="p-3 bg-white border border-slate-200 rounded-lg flex justify-between items-center">
-                    <div>
-                      <strong className="block text-slate-900">October 2026 - Monthly Tuition & Bus</strong>
-                      <span className="text-slate-400 text-[11px]">Receipt #REC-2026-8812 • Paid via UPI</span>
-                    </div>
-                    <span className="text-emerald-700 font-bold">₹2,300 (PAID)</span>
-                  </div>
-                  <div className="p-3 bg-white border border-slate-200 rounded-lg flex justify-between items-center">
-                    <div>
-                      <strong className="block text-slate-900">September 2026 - Monthly Tuition & Bus</strong>
-                      <span className="text-slate-400 text-[11px]">Receipt #REC-2026-7940 • Paid Cash</span>
-                    </div>
-                    <span className="text-emerald-700 font-bold">₹2,300 (PAID)</span>
-                  </div>
-                </div>
-              )}
             </div>
           )}
+
+          {/* Form */}
+          <form onSubmit={handleLogin} className="space-y-4 text-xs sm:text-sm">
+            <div>
+              <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                Student Admission / Registration Number
+              </label>
+              <input
+                type="text"
+                value={admissionNo}
+                onChange={(e) => setAdmissionNo(e.target.value)}
+                placeholder="e.g. IMSS/2026/104"
+                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0c2340] focus:bg-white text-slate-800 text-xs sm:text-sm transition-all"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                Registered Parent Mobile Number
+              </label>
+              <input
+                type="tel"
+                value={parentMobile}
+                onChange={(e) => setParentMobile(e.target.value)}
+                placeholder="e.g. 94190 XXXXX"
+                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0c2340] focus:bg-white text-slate-800 text-xs sm:text-sm transition-all"
+              />
+            </div>
+
+            <div className="pt-2">
+              <button
+                type="submit"
+                className="w-full py-3 bg-[#0c2340] hover:bg-slate-900 text-white font-extrabold rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 text-xs sm:text-sm cursor-pointer transform hover:-translate-y-0.5"
+              >
+                <Lock className="w-4 h-4 text-amber-400" />
+                <span>Log In</span>
+              </button>
+            </div>
+          </form>
+
+          {/* Planned Features List Preview */}
+          <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-2">
+            <span className="text-[11px] font-bold text-slate-700 uppercase tracking-wider block">
+              Upcoming Portal Modules:
+            </span>
+            <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-600">
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <span>Live Attendance Tracker</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <span>Digital Fee Receipts</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <span>Homework & Diary</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <span>JKBOSE Exam Marks</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Footer note */}
+          <div className="text-center text-[11px] text-slate-400">
+            For urgent administrative inquiries or admission verification, contact{' '}
+            <strong className="text-slate-700">{SCHOOL_INFO.contact.helpline}</strong>.
+          </div>
         </div>
       </div>
     </div>

@@ -101,6 +101,9 @@ export const Header: React.FC<HeaderProps> = ({ currentTab, setCurrentTab, openP
             >
               <UserCheck className="w-3.5 h-3.5" />
               <span>Student / Parent Portal</span>
+              <span className="bg-[#0c2340] text-amber-300 text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded-full ml-0.5">
+                Coming Soon
+              </span>
             </button>
           </div>
         </div>

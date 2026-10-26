@@ -142,7 +142,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab, openPortal }) => 
             <ul className="space-y-2 text-xs">
               <li>
                 <button onClick={openPortal} className="text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-1.5">
-                  <span>Student/Parent Portal</span>
+                  <span>Student/Parent Portal (Coming Soon)</span>
                 </button>
               </li>
               <li>
