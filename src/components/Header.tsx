@@ -10,7 +10,8 @@ import {
   Calculator, 
   ShieldCheck,
   ChevronRight,
-  ArrowRight
+  ArrowRight,
+  Trophy
 } from 'lucide-react';
 import { InstagramIcon, FacebookIcon } from './Icons';
 import type { TabType } from '../types';
@@ -20,9 +21,10 @@ interface HeaderProps {
   currentTab: TabType;
   setCurrentTab: (tab: TabType) => void;
   openPortal: () => void;
+  openAchievements?: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ currentTab, setCurrentTab, openPortal }) => {
+export const Header: React.FC<HeaderProps> = ({ currentTab, setCurrentTab, openPortal, openAchievements }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleNav = (tab: TabType) => {
@@ -92,6 +94,17 @@ export const Header: React.FC<HeaderProps> = ({ currentTab, setCurrentTab, openP
                 <FacebookIcon className="w-3.5 h-3.5" />
               </a>
             </div>
+
+            {openAchievements && (
+              <button 
+                onClick={openAchievements}
+                className="hidden sm:inline-flex items-center gap-1.5 bg-amber-400/15 hover:bg-amber-400/25 text-amber-300 hover:text-amber-200 border border-amber-400/30 px-2.5 py-1 rounded-full transition-all text-xs font-bold cursor-pointer"
+                title="View School Achievements & Meritorious Students"
+              >
+                <Trophy className="w-3.5 h-3.5 text-amber-400" />
+                <span>Star Achievers</span>
+              </button>
+            )}
 
             <span className="text-slate-600">|</span>
 

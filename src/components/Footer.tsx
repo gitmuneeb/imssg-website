@@ -16,9 +16,10 @@ import type { TabType } from '../types';
 interface FooterProps {
   setCurrentTab: (tab: TabType) => void;
   openPortal: () => void;
+  openAchievements?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ setCurrentTab, openPortal }) => {
+export const Footer: React.FC<FooterProps> = ({ setCurrentTab, openPortal, openAchievements }) => {
   const handleNav = (tab: TabType) => {
     setCurrentTab(tab);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -145,6 +146,16 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab, openPortal }) => 
                   <span>Student/Parent Portal (Coming Soon)</span>
                 </button>
               </li>
+              {openAchievements && (
+                <li>
+                  <button 
+                    onClick={openAchievements} 
+                    className="text-amber-300 hover:text-amber-200 font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
+                  >
+                    <span>🏆 Star Achievers & Honors</span>
+                  </button>
+                </li>
+              )}
               <li>
                 <button onClick={() => handleNav('facilities')} className="hover:text-white transition-colors">
                   Laboratories & ICT

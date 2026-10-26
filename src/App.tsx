@@ -16,6 +16,7 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { PortalModal } from './components/PortalModal';
 import { FloatingActions } from './components/FloatingActions';
+import { AchievementModal } from './components/AchievementModal';
 import { 
   ArrowRight, 
   Award, 
@@ -39,6 +40,7 @@ export function App() {
   const [currentTab, setCurrentTab] = useState<TabType>('home');
   const [isPortalOpen, setIsPortalOpen] = useState<boolean>(false);
   const [selectedNoticeId, setSelectedNoticeId] = useState<string | null>(null);
+  const [isAchievementModalOpen, setIsAchievementModalOpen] = useState<boolean>(true);
 
   const openNoticeFromHero = (id: string) => {
     setSelectedNoticeId(id);
@@ -52,7 +54,8 @@ export function App() {
       <Header 
         currentTab={currentTab} 
         setCurrentTab={setCurrentTab} 
-        openPortal={() => setIsPortalOpen(true)} 
+        openPortal={() => setIsPortalOpen(true)}
+        openAchievements={() => setIsAchievementModalOpen(true)} 
       />
 
       {/* Main Content Router */}
@@ -406,7 +409,14 @@ export function App() {
       {/* Student / Parent Portal Modal */}
       <PortalModal 
         isOpen={isPortalOpen} 
-        onClose={() => setIsPortalOpen(false)} 
+        onClose={() => setIsPortalOpen(false)}
+      />
+
+      {/* Student Achievement & Events Pop-Up Modal */}
+      <AchievementModal 
+        isOpen={isAchievementModalOpen} 
+        onClose={() => setIsAchievementModalOpen(false)} 
+        setCurrentTab={setCurrentTab} 
       />
 
       {/* Floating Action Buttons */}
@@ -415,7 +425,8 @@ export function App() {
       {/* Comprehensive Institutional Footer */}
       <Footer 
         setCurrentTab={setCurrentTab} 
-        openPortal={() => setIsPortalOpen(true)} 
+        openPortal={() => setIsPortalOpen(true)}
+        openAchievements={() => setIsAchievementModalOpen(true)} 
       />
     </div>
   );
