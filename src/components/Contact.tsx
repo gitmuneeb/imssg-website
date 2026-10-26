@@ -9,7 +9,7 @@ import {
   AlertCircle,
   MessageCircle
 } from 'lucide-react';
-import { InstagramIcon, FacebookIcon } from './Icons';
+import { InstagramIcon, FacebookIcon, WhatsAppIcon } from './Icons';
 import { SCHOOL_INFO } from '../data/schoolData';
 import type { TabType } from '../types';
 
@@ -166,7 +166,7 @@ export const Contact: React.FC<ContactProps> = ({ setCurrentTab }) => {
                 rel="noopener noreferrer"
                 className="py-2 px-3.5 bg-white text-emerald-800 font-bold text-xs rounded-xl shadow hover:bg-emerald-50 transition-colors flex items-center gap-1"
               >
-                <MessageCircle className="w-4 h-4 text-emerald-600" />
+                <WhatsAppIcon className="w-4 h-4 text-emerald-600 fill-current" />
                 <span>Chat Now</span>
               </a>
             </div>

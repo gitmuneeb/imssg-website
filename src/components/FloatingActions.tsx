@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, Phone, ArrowUp } from 'lucide-react';
+import { Phone, ArrowUp } from 'lucide-react';
+import { WhatsAppIcon } from './Icons';
 import { SCHOOL_INFO } from '../data/schoolData';
 
 export const FloatingActions: React.FC = () => {
@@ -57,7 +58,7 @@ export const FloatingActions: React.FC = () => {
         className="flex items-center gap-2 py-3 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm rounded-full shadow-2xl transition-all transform hover:scale-105"
         title="Chat on WhatsApp"
       >
-        <MessageCircle className="w-5 h-5 fill-current" />
+        <WhatsAppIcon className="w-5 h-5 text-white shrink-0" />
         <span>WhatsApp Inquiry</span>
       </a>
     </div>

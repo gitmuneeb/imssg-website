@@ -209,9 +209,9 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab, openPortal }) => 
         </div>
 
         {/* Bottom Sub-Footer */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4 pb-24 sm:pb-16 lg:pb-8 lg:pr-72">
           <p>© {new Date().getFullYear()} SMS Islamia Model Secondary School, Garoora. All Rights Reserved.</p>
-          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 bg-slate-900 border border-slate-800 px-4 py-2 rounded-xl text-slate-300 shadow-md">
             <span>UDISE: {SCHOOL_INFO.udiseCode}</span>
             <span>•</span>
             <span>Affiliated with JKBOSE / DSEK</span>
@@ -222,7 +222,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentTab, openPortal }) => 
                 href="https://ilmorasoftlabs.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-amber-400 hover:text-amber-300 font-semibold underline underline-offset-2 transition-colors hover:text-white"
+                className="text-amber-400 hover:text-amber-300 font-bold underline underline-offset-4 decoration-amber-500/70 transition-colors hover:text-white"
               >
                 ilmora SoftLabs
               </a>
