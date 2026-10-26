@@ -85,7 +85,7 @@ A modern, comprehensive, and responsive web portal for **S.M.S Islamia Model Sec
 ## 🚀 Running the Project Locally
 
 ```bash
-cd "C:\Users\user\.gemini\antigravity\scratch\imss-garoora-website"
+cd "\imss-garoora-website"
 npm install
 npm run dev
 ```
